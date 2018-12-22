@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { SiteHead } from './SiteHead';
+import { SiteHead } from './Components/SiteHead';
 
 class App extends Component {
   render() {
