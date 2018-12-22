@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+#portfolio pieces
+/src/portfolio-pieces/**/*.jpg
+/src/portfolio-pieces/**/*.txt
+/src/portfolio-pieces/**/*.json
+
 # testing
 /coverage
 
