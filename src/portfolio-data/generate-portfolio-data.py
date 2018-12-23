@@ -1,19 +1,18 @@
 import glob
 import json
+import pprint
 
-images = glob.glob('**/*.jpg', recursive=True)
-text_files = glob.glob('**/*.txt')
+sub_path = '../../public/'
+images = glob.glob(sub_path + 'portfolio-pieces/**/*.jpg', recursive=True)
+text_files = glob.glob(sub_path + 'portfolio-pieces/**/*.txt')
 
 portfolio_data = {}
 
 for image in images:
     seperated_path = image.split('/')
-    row_id = seperated_path[0]
+    row_id = seperated_path[4]
 
-    if len(seperated_path) > 2:
-        piece_id = seperated_path[1]
-    else:
-        piece_id = seperated_path[1].split('.')[0]
+    piece_id = seperated_path[5].split('.')[0]
     
     if row_id not in portfolio_data:
         portfolio_data[row_id] = {}
@@ -21,12 +20,12 @@ for image in images:
     if piece_id not in portfolio_data[row_id]:
         portfolio_data[row_id][piece_id] = {'urls': []}
     
-    portfolio_data[row_id][piece_id]['urls'].append(image)
+    portfolio_data[row_id][piece_id]['urls'].append(image[len(sub_path):])
 
 for text_file in text_files: 
     seperated_path = text_file.split('/')
-    row_id = seperated_path[0]
-    piece_id = seperated_path[1].split('.')[0]
+    row_id = seperated_path[4]
+    piece_id = seperated_path[5].split('.')[0]
 
     with open(text_file, 'r') as text_data:
         text = text_data.read()
