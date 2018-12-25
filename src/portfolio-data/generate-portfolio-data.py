@@ -25,12 +25,14 @@ for image in images:
 for text_file in text_files: 
     seperated_path = text_file.split('/')
     row_id = seperated_path[4]
-    piece_id = seperated_path[5].split('.')[0]
+    id_and_description = seperated_path[5].split('.')[0]
+    piece_id = id_and_description.split('-')[0]
+    description = id_and_description.split('-')[1]
 
     with open(text_file, 'r') as text_data:
         text = text_data.read()
     
-    portfolio_data[row_id][piece_id]['text'] = text
+    portfolio_data[row_id][piece_id][description] = text
 
 sorted_portfolio = []
 
@@ -40,7 +42,12 @@ for row_key in portfolio_data:
 
     for item_key in row_data:
         old_piece = row_data[item_key]
-        piece = {'piece_id': item_key, 'text': old_piece['text'], 'urls': old_piece['urls']}
+        piece = {
+            'piece_id': item_key,
+            'description': old_piece['description'],
+            'name': old_piece['name'],
+            'urls': old_piece['urls']
+            }
 
         piece['urls'] = sorted(piece['urls'])
         new_format['items'].append(piece)
