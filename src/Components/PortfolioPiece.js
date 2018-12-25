@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class PortfolioPiece extends Component {
+class PortfolioPiece extends Component {
 
     render() {
-        console.log(this.props.description);
+        let wrapperClasses = 'portfolio-piece';
+        wrapperClasses += this.props.sharesSpaceInRow ? ' two-column' : ' one-column';
+
         return (
-            <div>
-                <img src={this.props.imageSrc} alt='Portfolio Piece'/>
+            <div className={wrapperClasses}>
+                <img className='portfolio-piece' src={this.props.imageSrc} alt='Portfolio Piece'/>
             </div>
         )
     }
@@ -15,6 +17,9 @@ export class PortfolioPiece extends Component {
 
 PortfolioPiece.propTypes = {
     imageSrc: PropTypes.string.isRequired,
+    sharesSpaceInRow: PropTypes.bool.isRequired,
     description: PropTypes.string.isRequired,
     supportingImageUrls: PropTypes.arrayOf(PropTypes.string)
 }
+
+export default PortfolioPiece;

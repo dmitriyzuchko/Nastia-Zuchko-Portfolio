@@ -3,18 +3,42 @@ import PropTypes from 'prop-types';
 
 export class SocialLink extends Component {
     render() {
+        let social_network_url = '';
+        let class_name = 'fab ';
+
+        switch(this.props.socialNetwork) {
+            case 'twitter':
+                social_network_url += 'https://twitter.com/{x}';
+                class_name += 'fa-twitter';
+                break;
+            case 'tumblr':
+                social_network_url += 'https://tumbrl.com/{x}';
+                class_name += 'fa-tumblr';
+                break;
+            case 'instagram':
+                social_network_url += 'https://instagram.com/{x}';
+                class_name += 'fa-instagram';
+                break;
+            case 'wordpress':
+                social_network_url += 'https://{x}.wordpress.com';
+                class_name += 'fa-wordpress';
+        }
+
+        social_network_url = social_network_url.replace('{x}', this.props.username);
+
         return (
             <div>
-                <a href={this.props.url}>
-                <img className='social-network-image' src={this.props.imagesrc} alt={this.props.socialTitle} />
+                <a href={social_network_url} target='_blank'>
+                    <i className={class_name}></i>
                 </a>
             </div>
-        )
+        );
     }
 }
 
 SocialLink.propTypes = {
-    url: PropTypes.string.isRequired,
-    imagesrc: PropTypes.string.isRequired,
-    socialTitle: PropTypes.string.isRequired
+    socialNetwork: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired
 }
+
+export default SocialLink;
