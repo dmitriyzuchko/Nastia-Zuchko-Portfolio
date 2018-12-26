@@ -2,19 +2,9 @@ import React, { Component } from 'react';
 import PortfolioPiece from './PortfolioPiece';
 import PortfolioData from '../portfolio-data/portfolio_data.json';
 import PortfolioRow from './PortfolioRow';
-import {withRouter} from 'react-router';
 import uuid from 'uuid';
 
 class PortfolioDisplay extends Component {
-    constructor(props) {
-        super(props);
-        this.displayPiece = this.displayPiece.bind(this);
-    }
-    displayPiece(name) {
-        const path = `/portfolio-piece/${name}`;
-        console.log('Click');
-        this.props.history.push(path);
-    }
     render() {
         let portfolio_pieces = PortfolioData.map(row => {
             let pieces = [];
@@ -32,8 +22,7 @@ class PortfolioDisplay extends Component {
                         imageSrc={first_image}
                         name={name}
                         sharesSpaceInRow={shares_space_in_row}
-                        onClick={this.displayPiece}
-                        />
+                    />
                 );
 
                 pieces.push(portfolio_element);

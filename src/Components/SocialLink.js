@@ -22,13 +22,15 @@ export class SocialLink extends Component {
             case 'wordpress':
                 social_network_url += 'https://{x}.wordpress.com';
                 class_name += 'fa-wordpress';
+                break;
+            default:
         }
 
         social_network_url = social_network_url.replace('{x}', this.props.username);
 
         return (
             <div>
-                <a href={social_network_url} target='_blank'>
+                <a href={social_network_url}>
                     <i className={class_name}></i>
                 </a>
             </div>

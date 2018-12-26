@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import PortfolioPiece from './PortfolioPiece';
 
 class PortfolioRow extends Component {
     render() {
@@ -13,7 +12,7 @@ class PortfolioRow extends Component {
 }
 
 PortfolioRow.propTypes = {
-    pieces: PropTypes.arrayOf(PropTypes.instanceOf(PortfolioPiece)).isRequired
+    pieces: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default PortfolioRow;

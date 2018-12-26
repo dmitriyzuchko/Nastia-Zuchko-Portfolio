@@ -1,30 +1,26 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'; 
 import PropTypes from 'prop-types';
 
 class PortfolioPiece extends Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-    handleClick() {
-        this.props.onClick(this.props.name);
-    }
     render() {
+        const link = `/portfolio-piece/${this.props.name}`
         let wrapperClasses = 'portfolio-piece';
         wrapperClasses += this.props.sharesSpaceInRow ? ' two-column' : ' one-column';
 
         return (
-            <div className={wrapperClasses} onClick={this.handleClick}>
-                <img className='portfolio-piece' src={this.props.imageSrc} alt='Portfolio Piece'/>
-            </div>
+            <Link className={wrapperClasses} to={link}>
+                <div>
+                    <img className='portfolio-piece' src={this.props.imageSrc} alt={this.props.name}/>
+                </div>
+            </Link>
         )
     }
 }
 
 PortfolioPiece.propTypes = {
     imageSrc: PropTypes.string.isRequired,
-    sharesSpaceInRow: PropTypes.bool.isRequired,
-    description: PropTypes.string.isRequired,
+    sharesSpaceInRow: PropTypes.bool.isRequired
 }
 
 export default PortfolioPiece;

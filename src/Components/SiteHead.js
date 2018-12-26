@@ -5,10 +5,6 @@ import SocialLink from './SocialLink';
 
 class SiteHead extends Component {
     render() {
-        const twitter_url = 'https://twitter.com/nastyazuchko';
-        const wordpress_url = 'https://nastyazuchkoblog.wordpress.com/';
-        const instagram_url = 'https://www.instagram.com/nastyazuchko/';
-
         return (
             <div id='site-header'>
                 <img id='site-logo' src={HeaderLogo} alt='Website logo'/>
