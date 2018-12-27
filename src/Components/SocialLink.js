@@ -29,11 +29,9 @@ export class SocialLink extends Component {
         social_network_url = social_network_url.replace('{x}', this.props.username);
 
         return (
-            <div>
-                <a href={social_network_url}>
-                    <i className={class_name}></i>
-                </a>
-            </div>
+            <a href={social_network_url} className='social-network-link'>
+                <i className={class_name}></i>
+            </a>
         );
     }
 }

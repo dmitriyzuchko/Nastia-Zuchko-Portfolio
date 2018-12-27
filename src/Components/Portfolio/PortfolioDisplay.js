@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PortfolioPiece from './PortfolioPiece';
-import PortfolioData from '../portfolio-data/portfolio_data.json';
 import PortfolioRow from './PortfolioRow';
+import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import uuid from 'uuid';
 
 class PortfolioDisplay extends Component {

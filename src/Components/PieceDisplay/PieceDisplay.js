@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import PortfolioData from '../portfolio-data/portfolio_data.json';
+import PortfolioData from '../../portfolio-data/portfolio_data.json';
+import './PieceDisplay.sass';
 
 class PieceDisplay extends Component {
     componentWillMount() {
