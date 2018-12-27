@@ -1,0 +1,47 @@
+@import '../../colors.sass'
+    
+#landing-display
+    display: flex
+    flex-flow: column
+    height: 85vh
+    margin-bottom: 50px
+
+    #message-box
+        display: flex
+        flex: 1
+        background: url('../../resources/dragon-boi.png')
+        background-position: bottom right
+        background-size: 800px
+        background-repeat: no-repeat
+
+        p   
+            font-size: 30pt
+            font-weight: 700
+            margin: auto
+            margin-top: 20vh
+            line-height: 1.2
+
+    #portfolio-indicator
+        display: flex
+        text-align: center
+        height: 100px
+        font-size: 20pt
+
+        i
+            margin: auto
+
+#portfolio-display
+    text-align: center
+
+    .portfolio-row
+        display: inline-flex
+
+        .one-column
+            width: 100%
+
+        .two-column
+            width: 50%
+
+        .one-column, .two-column
+            .portfolio-piece
+                width: 95%

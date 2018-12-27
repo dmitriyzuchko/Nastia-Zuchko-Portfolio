@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import PortfolioPiece from './PortfolioPiece';
 import PortfolioRow from './PortfolioRow';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
-import uuid from 'uuid';
+import LandingDisplay from './LandingDisplay';
+import './Portfolio.sass';
 
 class PortfolioDisplay extends Component {
     render() {
@@ -32,8 +34,11 @@ class PortfolioDisplay extends Component {
         });
 
         return (
-            <div id='portfolio-display'>
-                {portfolio_pieces}
+            <div>
+                <LandingDisplay />
+                <div id='portfolio-display'>
+                    {portfolio_pieces}
+                </div>
             </div>
         );
     }

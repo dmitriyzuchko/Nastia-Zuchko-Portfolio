@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
+import HomeButton from './HomeButton/HomeButton';
 import './PieceDisplay.sass';
 
 class PieceDisplay extends Component {
@@ -48,6 +49,7 @@ class PieceDisplay extends Component {
                         {description}
                     </div>
                 </div>
+                <HomeButton />
             </div>
         );
     }

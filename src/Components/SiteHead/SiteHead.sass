@@ -1,0 +1,49 @@
+@import '../../colors.sass'
+    
+#site-header
+    display: inline-flex
+    height: 15vh
+    width: 100%
+    font-weight: 400
+
+    #site-logo 
+        align-self: center
+        margin-top: 20px
+        margin-left: 20px
+        height: 100%
+
+    #header-links
+        display: inline-flex
+        margin: auto
+        margin-right: 50px
+
+        #internal-links
+            margin-right: 10px
+            line-height: 2
+
+            .internal-link
+                margin: auto 10px
+
+            a, a:visited
+                text-decoration: none
+                color: #000
+                font-size: 1.5em
+            
+            a:hover, a:active
+                color: $color-accent
+
+        #external-links
+            display: inline-flex
+            background: #000
+            padding: 5px
+            border-radius: 5px
+
+            .social-network-link
+                margin: auto 8px
+
+            a, a:visited
+                color: #fff
+                font-size: 1.75em
+
+            a:hover, a:active
+                color: $color-accent

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import HeaderLogo from '../resources/title.png';
-import SocialLink from './SocialLink';
+import HeaderLogo from '../../resources/title.png';
+import SocialLink from '../SocialLink';
+import './SiteHead.sass';
 
 class SiteHead extends Component {
     render() {

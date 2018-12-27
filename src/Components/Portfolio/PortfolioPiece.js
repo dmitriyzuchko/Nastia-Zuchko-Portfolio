@@ -9,7 +9,7 @@ class PortfolioPiece extends Component {
         wrapperClasses += this.props.sharesSpaceInRow ? ' two-column' : ' one-column';
 
         return (
-            <Link className={wrapperClasses} to={link}>
+            <Link className={wrapperClasses} to={{pathname: link, query: {thePortfolio: 'fromPortfolio'}}}>
                 <div>
                     <img className='portfolio-piece' src={this.props.imageSrc} alt={this.props.name}/>
                 </div>

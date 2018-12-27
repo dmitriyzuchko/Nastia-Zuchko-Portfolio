@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Switch, Route } from 'react-router-dom';
-import SiteHead from './SiteHead';
+import SiteHead from './SiteHead/SiteHead';
 import Footer from './Footer';
 import PortfolioDisplay from './Portfolio/PortfolioDisplay';
 import Contact from './Contact';
