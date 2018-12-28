@@ -10,7 +10,7 @@ const LandingDisplay = () => (
             </p>
         </div>
         <div id='portfolio-indicator'>
-            <i class="fas fa-angle-down"></i>
+            <i className="fas fa-angle-down"></i>
         </div>
     </div>
 );

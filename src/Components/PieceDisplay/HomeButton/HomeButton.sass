@@ -1,16 +1,31 @@
 @import '../../../colors.sass'
     
-#home-button
+$dimension: 49px
+
+.home-button
     position: fixed
     top: 20px
     left: 20px
     background: #fff
-    padding: 10px
     border-radius: 25px
     box-shadow: 1px 1px 0 0 #111
     color: #000
-    font-size: 1.5em
+    font-size: 1.2em
+    display: flex
 
-#home-button:hover, #home-button:active
+    i
+        margin: auto
+    p
+        margin-left: 10px
+
+.from-portfolio
+    height: $dimension
+    width: $dimension
+
+.from-elsewhere
+    padding: 10px
+
+.home-button:hover, .home-button:active
     background: $color-accent
     color: #fff
+    cursor: pointer

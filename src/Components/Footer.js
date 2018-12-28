@@ -2,7 +2,9 @@ import React from 'react';
 
 const Footer = () => (
     <div id='footer'>
-        &copy; Nastya Zuchko
+        <p>
+          &copy; Nastya Zuchko
+        </p>
     </div>  
 );
 

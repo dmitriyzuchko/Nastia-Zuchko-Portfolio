@@ -1,19 +1,28 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import './HomeButton.sass';
 
 class HomeButton extends Component {
     render() {
+        let button_classes = 'home-button';
+
+        if (this.props.fromPortfolio) {
+            button_classes += ' from-portfolio';
+        }
+        else {
+            button_classes += ' from-elsewhere';
+        }
+
         return (
-            <Link to='/'>
-                <div id='home-button'>
-                    {
-                        this.props.fromPortfolio ? 
-                        <i className='fas fa-times-circle'></i> : 
-                        <i className="fas fa-home"></i>
-                    }
-                </div>
-            </Link>
+            <div className={button_classes} onClick={this.props.onClick}>
+                {
+                    this.props.fromPortfolio ? 
+                    <i className='fas fa-times'></i> : 
+                    <>
+                        <i className="fas fa-arrow-left"></i>
+                        <p>nastya zuchko's portfolio</p>
+                    </>
+                }
+            </div>
         );
     }
 }

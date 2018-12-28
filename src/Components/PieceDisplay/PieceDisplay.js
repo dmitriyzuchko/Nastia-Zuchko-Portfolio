@@ -1,12 +1,22 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import HomeButton from './HomeButton/HomeButton';
 import './PieceDisplay.sass';
 
 class PieceDisplay extends Component {
+    constructor(props) {
+        super(props);
+        this.returnToRoot = this.returnToRoot.bind(this);
+    }
     componentWillMount() {
+        this.obtainPieceData();
+        this.setReferrer();
+    }
+    obtainPieceData() {
         const name = this.props.match.params.name;
         let piece_data;
+        let result_found = false;
 
         for (let row_index in PortfolioData) {
             let row = PortfolioData[row_index]['items'];
@@ -16,11 +26,37 @@ class PieceDisplay extends Component {
 
                 if (piece['name'] === name) {
                     piece_data = piece;
+                    result_found = true;
                 }
             }
         }
 
-        this.setState({'piece_data': piece_data});
+        if (result_found) {
+            this.setState({'piece_data': piece_data});
+        }
+        else {
+            this.props.history.push('/no-match');
+        }
+    }
+    setReferrer() {
+        let from_portfolio;
+
+        try {
+            from_portfolio = this.props.location.state.fromPortfolio;
+        }
+        catch {
+            from_portfolio = false;
+        }
+
+        this.setState({is_referred_from_portfolio: from_portfolio});
+    }
+    returnToRoot() {
+        if (this.state.is_referred_from_portfolio) {
+            this.props.history.goBack();
+        }
+        else {
+            this.props.history.push('/');
+        }
     }
     render() {
         let main_image = this.state.piece_data['urls'][0];
@@ -49,7 +85,9 @@ class PieceDisplay extends Component {
                         {description}
                     </div>
                 </div>
-                <HomeButton />
+                <HomeButton 
+                    onClick={this.returnToRoot}
+                    fromPortfolio={this.state.is_referred_from_portfolio} />
             </div>
         );
     }

@@ -42,10 +42,12 @@ for row_key in portfolio_data:
 
     for item_key in row_data:
         old_piece = row_data[item_key]
+        url_friendly_name = old_piece['name'].replace(' ', '-')
+
         piece = {
             'piece_id': item_key,
             'description': old_piece['description'],
-            'name': old_piece['name'],
+            'name': url_friendly_name,
             'urls': old_piece['urls']
             }
 
