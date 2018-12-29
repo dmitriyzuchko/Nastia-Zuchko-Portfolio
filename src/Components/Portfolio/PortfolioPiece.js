@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 class PortfolioPiece extends Component {
     render() {
         const link = `/portfolio-piece/${this.props.name}`
-        let wrapperClasses = 'portfolio-piece';
-        wrapperClasses += this.props.sharesSpaceInRow ? ' two-column' : ' one-column';
+        let wrapper_classes = 'portfolio-piece';
+        wrapper_classes += this.props.sharesSpaceInRow ? ' two-column' : ' one-column';
 
         return (
             <Link 
-                className={wrapperClasses}
+                className={wrapper_classes}
                 to={{
                     pathname: link,
                     state: {fromPortfolio: true}

@@ -4,7 +4,7 @@ import PortfolioPiece from './PortfolioPiece';
 import PortfolioRow from './PortfolioRow';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import LandingDisplay from './LandingDisplay';
-import './Portfolio.sass';
+import './Portfolio.scss';
 
 class PortfolioDisplay extends Component {
     render() {

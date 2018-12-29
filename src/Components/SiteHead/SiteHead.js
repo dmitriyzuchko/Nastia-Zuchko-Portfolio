@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import HeaderLogo from '../../resources/title.png';
 import SocialLink from '../SocialLink';
-import './SiteHead.sass';
+import './SiteHead.scss';
 
 class SiteHead extends Component {
     render() {
@@ -15,9 +15,9 @@ class SiteHead extends Component {
                         <Link className='internal-link' to='/contact'>Contact</Link>
                     </div>
                     <div id='external-links'>
-                        <SocialLink socialNetwork='wordpress' username='nastyazuchko'/>
-                        <SocialLink socialNetwork='twitter' username='nastyazuchko'/>
-                        <SocialLink socialNetwork='instagram' username='nastyazuchko'/>
+                        <SocialLink socialNetwork='wordpress' username='nastiazuchko'/>
+                        <SocialLink socialNetwork='twitter' username='nastiazuchko'/>
+                        <SocialLink socialNetwork='instagram' username='nastiazuchko'/>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,60 @@
+@import "../../colors.scss";
+
+#contact-wrapper {
+  display: flex;
+  margin-top: 30px;
+  flex-grow: 1;
+
+  #about-me {
+    width: 50%;
+    font-size: 18pt;
+    display: flex;
+    flex-flow: column;
+
+    #personal-photo {
+      margin: 50px auto;
+      width: 90%;
+    }
+  }
+
+  #contact-form {
+    width: 40%;
+    margin: 0px auto;
+
+    h1 {
+      text-align: center;
+    }
+
+    input {
+      margin-bottom: 20px;
+      height: 50px;
+    }
+
+    textarea {
+      min-height: 300px;
+      height: 300px;
+    }
+
+    input, textarea {
+      min-width: 100%;
+      max-width: 100%;
+      width: 100%;
+      font-size: 30px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    #button-wrapper {
+      text-align: right;
+
+      button {
+        height: 60px;
+        font-size: 30px;
+        background: #fff;
+        border-radius: 5px;
+        padding: 5px 15px;
+        text-align: center;
+      }
+    }
+  }
+}

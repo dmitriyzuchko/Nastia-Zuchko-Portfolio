@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import HomeButton from './HomeButton/HomeButton';
-import './PieceDisplay.sass';
+import './PieceDisplay.scss';
 
 class PieceDisplay extends Component {
     constructor(props) {

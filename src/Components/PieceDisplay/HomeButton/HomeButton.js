@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './HomeButton.sass';
+import './HomeButton.scss';
 
 class HomeButton extends Component {
     render() {
@@ -19,7 +19,7 @@ class HomeButton extends Component {
                     <i className='fas fa-times'></i> : 
                     <>
                         <i className="fas fa-arrow-left"></i>
-                        <p>nastya zuchko's portfolio</p>
+                        <p>nastia zuchko's portfolio</p>
                     </>
                 }
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './App.sass';
+import './App.scss';
 import PageDisplay from './Components/PageDisplay';
 import PieceDisplay from './Components/PieceDisplay/PieceDisplay';
 

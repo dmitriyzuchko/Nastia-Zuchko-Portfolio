@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactForm from './ContactForm';
-import './Contact.sass';
+import './Contact.scss';
 import PersonalPhoto from '../../resources/personal-photo.png';
 
 const Contact = () => (
