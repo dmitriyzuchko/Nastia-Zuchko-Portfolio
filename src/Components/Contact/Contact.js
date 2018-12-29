@@ -4,7 +4,7 @@ import './Contact.scss';
 import PersonalPhoto from '../../resources/personal-photo.png';
 
 const Contact = () => (
-    <div id='contact-wrapper'>
+    <div id='contact-wrapper' className='container'>
         <div id='about-me'>
             <img id='personal-photo' src={PersonalPhoto} alt='Its me'/>
             Phasellus suscipit lacinia urna, quis tempus dui sodales et. 

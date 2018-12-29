@@ -1,12 +1,14 @@
-@import "colors.scss";
+@import "./colors.scss";
 
-* {
+body, html {
+  height: 100%;
+  font-family: "Kanit", sans-serif;
   margin: 0;
 }
 
-body, html, #root {
-  height: 100%;
-  font-family: "Kanit", sans-serif;
+.container {
+  width: 1100px;
+  margin: 0 auto;
 }
 
 body {
@@ -14,19 +16,7 @@ body {
   overflow-y: scroll;
 }
 
-#root {
-  display: flex;
-}
-
-#site-wrapper {
-  display: flex;
-  flex-flow: column;
-  width: 1100px;
-  min-width: 1100px;
-  margin: 0 auto;
-}
-
-#footer {
+footer {
   display: flex;
   min-height: 50px;
 

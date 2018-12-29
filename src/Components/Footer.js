@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Footer = () => (
-    <div id='footer'>
+    <footer>
         <p>
           &copy; nastia zuchko
         </p>
-    </div>  
+    </footer>
 );
 
 export default Footer;

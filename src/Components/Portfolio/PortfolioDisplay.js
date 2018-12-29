@@ -34,12 +34,12 @@ class PortfolioDisplay extends Component {
         });
 
         return (
-            <div>
+            <>
                 <LandingDisplay />
-                <div id='portfolio-display'>
+                <div id='portfolio-display' className='container'>
                     {portfolio_pieces}
                 </div>
-            </div>
+            </>
         );
     }
 }

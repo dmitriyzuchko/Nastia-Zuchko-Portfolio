@@ -2,7 +2,7 @@ import React from 'react';
 
 const LandingDisplay = () => (
     <div id='landing-display'>
-        <div id='message-box'>
+        <div id='message-box' className='container'>
             <p>
                 GIVE ME MONEY. <br />
                 MONEY ME NOW. <br />

@@ -9,7 +9,7 @@ import NoMatch from './NoMatch';
 class PageDisplay extends Component {
     render() {
         return (
-            <div id='site-wrapper'>
+            <>
                 <SiteHead />
         
                 <Switch>
@@ -20,7 +20,7 @@ class PageDisplay extends Component {
                 </Switch>
         
                 <Footer />
-            </div>
+            </>
         );
     }
 }
