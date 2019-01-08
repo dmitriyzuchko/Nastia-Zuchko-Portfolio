@@ -4,6 +4,7 @@ header {
   display: flex;
   height: 150px;
   min-height: 150px;
+  margin-top: 10px;
   width: 100%;
   font-weight: 400;
 }
@@ -14,7 +15,6 @@ header .container {
 
 #site-logo {
   align-self: center;
-  margin-top: 30px;
   height: 100%;
   flex-basis: 150px;
 }
@@ -33,13 +33,15 @@ nav {
     margin: auto 10px;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     text-decoration: none;
     color: #000;
     font-size: 1.5em;
   }
 
-  a:hover, a:active {
+  a:hover,
+  a:active {
     color: $color-accent;
   }
 }
@@ -54,14 +56,14 @@ nav {
     margin: auto 8px;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     color: #fff;
     font-size: 1.75em;
   }
 
-  a:hover, a:active {
+  a:hover,
+  a:active {
     color: $color-accent;
   }
 }
-
-

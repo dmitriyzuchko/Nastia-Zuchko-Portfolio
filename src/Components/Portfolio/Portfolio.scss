@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: column;
   color: $color-accent;
+  background: $color-secondary;
   text-align: center;
   height: 75px;
   font-size: 24pt;
@@ -36,9 +37,9 @@
   }
 }
 
-
 #portfolio-display {
   text-align: center;
+  background: $color-secondary;
 }
 
 .portfolio-row {
@@ -61,7 +62,8 @@
     }
   }
 
-  .one-column, .two-column {
+  .one-column,
+  .two-column {
     margin: auto;
   }
 }
