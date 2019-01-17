@@ -1,19 +1,38 @@
-@import "../../colors.scss";
+@import '../../colors.scss';
+@import './PieceNavBar/PieceNavBar.scss';
 
 #piece-display {
-  display: inline-flex;
-  margin: auto;
+    display: flex;
+    margin: auto;
+    height: calc(100vh - #{$nav-bar-height});
 }
 
 #piece-image {
-  width: 60%;
+    display: flex;
+    padding: 25px;
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
+    img {
+        margin: auto;
+        height: 95%;
+    }
 }
 
 #details-display {
-  width: 40%;
+    #description {
+        padding: 25px;
+    }
+}
+
+.portrait-image {
+    width: 50%;
+    height: 100%;
+}
+
+.landscape-display {
+    flex-direction: column;
+}
+
+.landscape-image {
+    width: 100v;
+    height: 50vh;
 }

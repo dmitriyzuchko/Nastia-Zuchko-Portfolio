@@ -1,0 +1,29 @@
+@import '../../../colors.scss';
+
+$nav-bar-height: 50px;
+
+#piece-nav-bar {
+    display: flex;
+    height: $nav-bar-height;
+    font-size: 24pt;
+
+    .home-button,
+    #nav-title,
+    i {
+        margin: auto;
+    }
+
+    .home-button {
+        margin-left: 10px;
+    }
+
+    .fa-arrow-left,
+    .fa-arrow-right {
+        margin-right: 10px;
+    }
+}
+
+#nav-title {
+    text-align: center;
+    flex-grow: 1;
+}

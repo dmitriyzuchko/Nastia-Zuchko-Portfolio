@@ -6,9 +6,10 @@
 .pnp.js
 
 #portfolio pieces
-/src/portfolio-pieces/**/*.jpg
-/src/portfolio-pieces/**/*.txt
-/src/portfolio-pieces/**/*.json
+/public/portfolio-pieces/**/*.jpg
+/public/portfolio-pieces/**/*.png
+/public/portfolio-pieces/**/*.txt
+/public/portfolio-pieces/**/*.json
 
 # testing
 /coverage
