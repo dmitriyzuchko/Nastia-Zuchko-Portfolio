@@ -35,8 +35,9 @@ class PieceDisplay extends Component {
 
             for (let piece_index in row) {
                 let piece = row[piece_index];
+                let pieceName = piece['name'].replace(/\s/g, '-');
 
-                if (piece['name'] === name) {
+                if (pieceName === name) {
                     piece_data = piece;
                     result_found = true;
                 }
