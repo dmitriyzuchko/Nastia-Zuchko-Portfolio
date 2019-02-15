@@ -1,47 +1,47 @@
-import React, { Component } from "react";
-import uuid from "uuid";
-import PortfolioPiece from "./PortfolioPiece";
-import PortfolioRow from "./PortfolioRow";
-import PortfolioData from "../../portfolio-data/portfolio_data.json";
-import LandingDisplay from "./LandingDisplay";
-import "./Portfolio.scss";
+import React, { Component } from 'react';
+import uuid from 'uuid';
+import PortfolioPiece from './PortfolioPiece';
+import PortfolioRow from './PortfolioRow';
+import PortfolioData from '../../portfolio-data/portfolio_data.json';
+import './Portfolio.scss';
 
 class PortfolioDisplay extends Component {
-  render() {
-    let portfolio_pieces = PortfolioData.map(row => {
-      let pieces = [];
-      let item_amount = row["items"].length;
+    render() {
+        let portfolioPieces = PortfolioData.map(row => {
+            let pieces = [];
+            let itemAmount = row['items'].length;
 
-      for (let piece in row["items"]) {
-        const piece_data = row["items"][piece];
-        const first_image = piece_data["urls"][0];
-        const name = piece_data["name"];
-        const shares_space_in_row = item_amount > 1 ? true : false;
+            for (let piece in row['items']) {
+                const pieceData = row['items'][piece];
+                const firstImage = pieceData['urls'][0];
+                const name = pieceData['name'];
+                const sharesSpaceInRow = itemAmount > 1 ? true : false;
+                const isMultiPart = pieceData['urls'].length > 1 ? true : false;
 
-        const portfolio_element = (
-          <PortfolioPiece
-            key={uuid.v4()}
-            imageSrc={first_image}
-            name={name}
-            sharesSpaceInRow={shares_space_in_row}
-          />
+                const portfolio_element = (
+                    <PortfolioPiece
+                        key={uuid.v4()}
+                        imageSrc={firstImage}
+                        name={name}
+                        sharesSpaceInRow={sharesSpaceInRow}
+                        isMultiPart={isMultiPart}
+                    />
+                );
+
+                pieces.push(portfolio_element);
+            }
+
+            return <PortfolioRow key={uuid.v4()} pieces={pieces} />;
+        });
+
+        return (
+            <>
+                <div id='portfolio-display'>
+                    <div className='container'>{portfolioPieces}</div>
+                </div>
+            </>
         );
-
-        pieces.push(portfolio_element);
-      }
-
-      return <PortfolioRow key={uuid.v4()} pieces={pieces} />;
-    });
-
-    return (
-      <>
-        <LandingDisplay />
-        <div id="portfolio-display">
-          <div className="container">{portfolio_pieces}</div>
-        </div>
-      </>
-    );
-  }
+    }
 }
 
 export default PortfolioDisplay;

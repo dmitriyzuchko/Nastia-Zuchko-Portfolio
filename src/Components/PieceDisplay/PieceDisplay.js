@@ -14,11 +14,13 @@ class PieceDisplay extends Component {
         let piece_display = document.getElementById('piece-display');
         let piece_image = document.getElementById('piece-image');
 
+        console.log(piece_display);
+
         if (image_tag.width > image_tag.height) {
             piece_display.classList.add('landscape-display');
             piece_image.classList.add('landscape-image');
         } else {
-            piece_display.className.add('portrait-display');
+            piece_display.classList.add('portrait-display');
             piece_image.classList.add('portrait-image');
         }
     }

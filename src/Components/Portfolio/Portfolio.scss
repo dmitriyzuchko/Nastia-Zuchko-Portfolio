@@ -1,69 +1,73 @@
-@import "../../colors.scss";
+@import '../../colors.scss';
+@import '../SiteHead/SiteHead.scss';
+
+$landing-display-height: calc(100vh - #{$header-height});
 
 #landing-display {
-  display: flex;
-  flex-flow: column;
-  height: 85vh;
+    display: flex;
+    flex-flow: column;
+    height: $landing-display-height;
 }
 
 #message-box {
-  display: flex;
-  flex: 1;
-  background: url("../../resources/dragon-boi.png");
-  background-position: bottom right;
-  background-size: 800px;
-  background-repeat: no-repeat;
+    display: flex;
+    flex-grow: 1;
+    background: url('../../resources/dragon-boi.png');
+    background-position: bottom right;
+    background-size: 800px;
+    background-repeat: no-repeat;
 
-  p {
-    font-size: 30pt;
-    font-weight: 700;
-    margin: auto;
-    margin-top: 20vh;
-    line-height: 1.2;
-  }
+    p {
+        font-size: 30pt;
+        font-weight: 700;
+        margin: auto;
+        margin-top: 20vh;
+        line-height: 1.2;
+    }
 }
 
 #portfolio-indicator {
-  display: flex;
-  flex-direction: column;
-  color: $color-accent;
-  background: $color-secondary;
-  text-align: center;
-  height: 75px;
-  font-size: 24pt;
+    display: flex;
+    flex-direction: column;
+    height: 5vh;
+    color: $color-accent;
+    background: $color-secondary;
+    text-align: center;
+    font-size: 24pt;
 
-  i {
-    margin: auto;
-  }
+    i {
+        margin: auto;
+    }
 }
 
 #portfolio-display {
-  text-align: center;
-  background: $color-secondary;
+    padding-top: 25px;
+    text-align: center;
+    background: $color-secondary;
 }
 
 .portfolio-row {
-  display: inline-flex;
-  margin-bottom: 30px;
+    display: inline-flex;
+    margin-bottom: 30px;
 
-  .one-column {
-    width: 100%;
+    .one-column {
+        width: 100%;
 
-    .portfolio-piece {
-      width: 100%;
+        .portfolio-piece {
+            width: 100%;
+        }
     }
-  }
 
-  .two-column {
-    width: 50%;
+    .two-column {
+        width: 50%;
 
-    .portfolio-piece {
-      width: 95%;
+        .portfolio-piece {
+            width: 95%;
+        }
     }
-  }
 
-  .one-column,
-  .two-column {
-    margin: auto;
-  }
+    .one-column,
+    .two-column {
+        margin: auto;
+    }
 }
