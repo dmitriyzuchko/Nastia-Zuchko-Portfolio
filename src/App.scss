@@ -23,6 +23,11 @@ body {
     overflow-y: scroll;
 }
 
+#root {
+    border-top: solid 10px $color-accent;
+    background: $color-secondary;
+}
+
 footer {
     display: flex;
     min-height: 50px;

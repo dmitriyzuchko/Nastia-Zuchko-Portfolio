@@ -1,45 +1,6 @@
 @import '../../colors.scss';
 @import '../SiteHead/SiteHead.scss';
 
-$landing-display-height: calc(100vh - #{$header-height});
-
-#landing-display {
-    display: flex;
-    flex-flow: column;
-    height: $landing-display-height;
-}
-
-#message-box {
-    display: flex;
-    flex-grow: 1;
-    background: url('../../resources/dragon-boi.png');
-    background-position: bottom right;
-    background-size: 800px;
-    background-repeat: no-repeat;
-
-    p {
-        font-size: 30pt;
-        font-weight: 700;
-        margin: auto;
-        margin-top: 20vh;
-        line-height: 1.2;
-    }
-}
-
-#portfolio-indicator {
-    display: flex;
-    flex-direction: column;
-    height: 5vh;
-    color: $color-accent;
-    background: $color-secondary;
-    text-align: center;
-    font-size: 24pt;
-
-    i {
-        margin: auto;
-    }
-}
-
 #portfolio-display {
     padding-top: 25px;
     text-align: center;
