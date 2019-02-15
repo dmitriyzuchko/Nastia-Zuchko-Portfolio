@@ -54,7 +54,8 @@ $landing-display-height: calc(100vh - #{$header-height});
         width: 100%;
 
         .portfolio-piece {
-            width: 100%;
+            max-width: 100%;
+            max-height: 80vh;
         }
     }
 
