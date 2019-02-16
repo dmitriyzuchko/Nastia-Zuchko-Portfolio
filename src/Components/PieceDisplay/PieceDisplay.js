@@ -55,9 +55,13 @@ class PieceDisplay extends Component {
         const name = this.state.pieceData.name;
         const supportingImages = this.state.pieceData['urls'];
 
-        const supportingImageHTML = supportingImages.map(image => {
-            return <div style={{ backgroundImage: `url('/${image}')` }} />;
-        });
+        let supportingImageHTML = [];
+
+        if (supportingImages.length > 1) {
+            supportingImageHTML = supportingImages.map(image => {
+                return <div style={{ backgroundImage: `url('/${image}')` }} />;
+            });
+        }
 
         return (
             <>
