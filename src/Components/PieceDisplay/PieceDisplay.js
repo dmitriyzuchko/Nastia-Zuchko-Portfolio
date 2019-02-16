@@ -50,18 +50,14 @@ class PieceDisplay extends Component {
     }
 
     render() {
-        let mainImage = this.state.pieceData['urls'][0];
+        let mainImage = `/${this.state.pieceData['urls'][0]}`;
         const description = this.state.pieceData.description;
         const name = this.state.pieceData.name;
         const supportingImages = this.state.pieceData['urls'];
 
         const supportingImageHTML = supportingImages.map(image => {
-            const image_src = '../' + image;
-
-            return <div style={{ backgroundImage: `url(${image_src})` }} />;
+            return <div style={{ backgroundImage: `url('/${image}')` }} />;
         });
-
-        mainImage = '../' + mainImage;
 
         return (
             <>
@@ -75,10 +71,10 @@ class PieceDisplay extends Component {
                         />
                     </div>
                     <div id='details-display'>
-                        <div id='description'>&emsp;{description}</div>
                         <div id='supporting-image-collection'>
                             {supportingImageHTML}
                         </div>
+                        <div id='description'>&emsp;{description}</div>
                     </div>
                 </div>
                 <Footer />
