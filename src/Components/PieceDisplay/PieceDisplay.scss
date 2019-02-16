@@ -1,4 +1,4 @@
-@import '../../colors.scss';
+@import '../../variables.scss';
 @import './PieceNavBar/PieceNavBar.scss';
 
 #piece-display {
@@ -10,6 +10,7 @@
 #piece-image {
     display: flex;
     padding: 25px;
+    flex: 1.5;
 
     img {
         margin: auto;
@@ -19,6 +20,7 @@
 }
 
 #details-display {
+    flex: 1;
     #description {
         padding: 25px;
     }
@@ -31,8 +33,4 @@
 
 .landscape-display {
     flex-direction: column;
-}
-
-.landscape-image {
-    height: 60vh;
 }
