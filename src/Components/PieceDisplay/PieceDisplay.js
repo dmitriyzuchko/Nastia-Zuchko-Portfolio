@@ -11,24 +11,22 @@ class PieceDisplay extends Component {
 
     setDisplayOrientationClass(e) {
         let image_tag = e.target;
-        let piece_display = document.getElementById('piece-display');
-        let piece_image = document.getElementById('piece-image');
-
-        console.log(piece_display);
+        let pieceDisplay = document.getElementById('piece-display');
+        let pieceImage = document.getElementById('piece-image');
 
         if (image_tag.width > image_tag.height) {
-            piece_display.classList.add('landscape-display');
-            piece_image.classList.add('landscape-image');
+            pieceDisplay.classList.add('landscape-display');
+            pieceImage.classList.add('landscape-image');
         } else {
-            piece_display.classList.add('portrait-display');
-            piece_image.classList.add('portrait-image');
+            pieceDisplay.classList.add('portrait-display');
+            pieceImage.classList.add('portrait-image');
         }
     }
 
     obtainPieceData() {
         const name = this.props.match.params.name;
-        let piece_data;
-        let result_found = false;
+        let pieceData;
+        let resultFound = false;
 
         for (let row_index in PortfolioData) {
             let row = PortfolioData[row_index]['items'];
@@ -38,32 +36,32 @@ class PieceDisplay extends Component {
                 let pieceName = piece['name'].replace(/\s/g, '-');
 
                 if (pieceName === name) {
-                    piece_data = piece;
-                    result_found = true;
+                    pieceData = piece;
+                    resultFound = true;
                 }
             }
         }
 
-        if (result_found) {
-            this.setState({ piece_data: piece_data });
+        if (resultFound) {
+            this.setState({ pieceData: pieceData });
         } else {
             this.props.history.push('/no-match');
         }
     }
 
     render() {
-        let main_image = this.state.piece_data['urls'][0];
-        const description = this.state.piece_data.description;
-        const name = this.state.piece_data.name;
-        const supporting_images = this.state.piece_data['urls'];
+        let mainImage = this.state.pieceData['urls'][0];
+        const description = this.state.pieceData.description;
+        const name = this.state.pieceData.name;
+        const supportingImages = this.state.pieceData['urls'];
 
-        const supporting_image_html = supporting_images.map(image => {
+        const supportingImageHTML = supportingImages.map(image => {
             const image_src = '../' + image;
 
             return <div style={{ backgroundImage: `url(${image_src})` }} />;
         });
 
-        main_image = '../' + main_image;
+        mainImage = '../' + mainImage;
 
         return (
             <>
@@ -71,7 +69,7 @@ class PieceDisplay extends Component {
                 <div id='piece-display'>
                     <div id='piece-image'>
                         <img
-                            src={main_image}
+                            src={mainImage}
                             alt={name}
                             onLoad={this.setDisplayOrientationClass}
                         />
@@ -79,7 +77,7 @@ class PieceDisplay extends Component {
                     <div id='details-display'>
                         <div id='description'>&emsp;{description}</div>
                         <div id='supporting-image-collection'>
-                            {supporting_image_html}
+                            {supportingImageHTML}
                         </div>
                     </div>
                 </div>
