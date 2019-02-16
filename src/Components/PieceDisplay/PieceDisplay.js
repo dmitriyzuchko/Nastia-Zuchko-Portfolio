@@ -10,11 +10,11 @@ class PieceDisplay extends Component {
     }
 
     setDisplayOrientationClass(e) {
-        let image_tag = e.target;
+        let imageTag = e.target;
         let pieceDisplay = document.getElementById('piece-display');
         let pieceImage = document.getElementById('piece-image');
 
-        if (image_tag.width > image_tag.height) {
+        if (imageTag.width > imageTag.height) {
             pieceDisplay.classList.add('landscape-display');
             pieceImage.classList.add('landscape-image');
         } else {
