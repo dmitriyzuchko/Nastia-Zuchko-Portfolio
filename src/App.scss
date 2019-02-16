@@ -24,13 +24,13 @@ body {
 }
 
 #root {
-    border-top: solid 10px $color-accent;
+    border-top: solid $accent-bar-height $color-accent;
     background: $color-secondary;
 }
 
 footer {
     display: flex;
-    min-height: 50px;
+    min-height: $footer-height;
     background: $color-secondary;
     color: #fff;
 

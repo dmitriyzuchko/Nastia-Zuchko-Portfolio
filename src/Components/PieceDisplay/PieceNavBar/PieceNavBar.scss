@@ -1,10 +1,8 @@
 @import '../../../variables.scss';
 
-$nav-bar-height: 50px;
-
 #piece-nav-bar {
     display: flex;
-    height: $nav-bar-height;
+    height: $piece-display-nav-height;
     font-size: 24pt;
 
     .home-button,
