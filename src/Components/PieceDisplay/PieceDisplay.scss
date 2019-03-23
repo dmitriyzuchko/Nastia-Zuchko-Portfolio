@@ -21,7 +21,9 @@
 
 #details-display {
     flex: 1;
+
     #description {
+        color: #fff;
         padding: 25px;
     }
 }
@@ -33,4 +35,21 @@
 
 .landscape-display {
     flex-direction: column;
+}
+
+#supporting-image-collection {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    align-content: flex-start;
+
+    * {
+        height: 100px;
+        width: 120px;
+        margin: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
