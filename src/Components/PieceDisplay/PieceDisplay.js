@@ -3,6 +3,7 @@ import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import PieceNavBar from './PieceNavBar/PieceNavBar.js';
 import Footer from '../Footer';
 import './PieceDisplay.scss';
+import SupportingImageButton from './SupportingImageButton.js';
 
 class PieceDisplay extends Component {
     componentWillMount() {
@@ -21,6 +22,11 @@ class PieceDisplay extends Component {
             pieceDisplay.classList.add('portrait-display');
             pieceImage.classList.add('portrait-image');
         }
+    }
+
+    changeImageDisplay(imageSrc) {
+        let imageDisplay = document.querySelector('#piece-image img');
+        imageDisplay.src = imageSrc;
     }
 
     obtainPieceData() {
@@ -59,7 +65,12 @@ class PieceDisplay extends Component {
 
         if (supportingImages.length > 1) {
             supportingImageHTML = supportingImages.map(image => {
-                return <div style={{ backgroundImage: `url('/${image}')` }} />;
+                return (
+                    <SupportingImageButton
+                        imageSrc={image}
+                        onClick={this.changeImageDisplay}
+                    />
+                );
             });
         }
 
