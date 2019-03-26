@@ -52,4 +52,12 @@
         background-position: center;
         background-repeat: no-repeat;
     }
+
+    .active-thumb {
+        opacity: 1;
+    }
+
+    .inactive-thumb {
+        opacity: 0.5;
+    }
 }

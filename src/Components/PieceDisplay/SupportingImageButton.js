@@ -5,13 +5,20 @@ export class SupportingImageButton extends Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
+
     handleClick() {
-        this.props.onClick(`/${this.props.imageSrc}`);
+        this.props.onClick(`${this.props.imageSrc}`);
     }
+
     render() {
+        let activityClass = this.props.isActive
+            ? 'active-thumb'
+            : 'inactive-thumb';
+
         return (
             <div
-                style={{ backgroundImage: `url('/${this.props.imageSrc}')` }}
+                className={activityClass}
+                style={{ backgroundImage: `url('${this.props.imageSrc}')` }}
                 onClick={this.handleClick}
             />
         );

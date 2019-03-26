@@ -6,6 +6,13 @@ import './PieceDisplay.scss';
 import SupportingImageButton from './SupportingImageButton.js';
 
 class PieceDisplay extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { selectedThumbnail: [] };
+        this.changeImageDisplay = this.changeImageDisplay.bind(this);
+    }
+
     componentWillMount() {
         this.obtainPieceData();
     }
@@ -24,9 +31,20 @@ class PieceDisplay extends Component {
         }
     }
 
-    changeImageDisplay(imageSrc) {
+    changeImageDisplay(index, imageSrc) {
         let imageDisplay = document.querySelector('#piece-image img');
+
         imageDisplay.src = imageSrc;
+
+        console.log(`Thumbnail number ${index + 1} clicked.`);
+
+        this.setState({
+            selectedThumbnail: this.state.selectedThumbnail.map((v, i) =>
+                i === index ? true : false
+            )
+        });
+
+        console.log(this.state.selectedThumbnail);
     }
 
     obtainPieceData() {
@@ -34,8 +52,8 @@ class PieceDisplay extends Component {
         let pieceData;
         let resultFound = false;
 
-        for (let row_index in PortfolioData) {
-            let row = PortfolioData[row_index]['items'];
+        for (let rowIndex in PortfolioData) {
+            let row = PortfolioData[rowIndex]['items'];
 
             for (let piece_index in row) {
                 let piece = row[piece_index];
@@ -50,6 +68,14 @@ class PieceDisplay extends Component {
 
         if (resultFound) {
             this.setState({ pieceData: pieceData });
+
+            pieceData.urls.map((_, index) => {
+                if (index !== 0) {
+                    this.state.selectedThumbnail.push(false);
+                } else {
+                    this.state.selectedThumbnail.push(true);
+                }
+            });
         } else {
             this.props.history.push('/no-match');
         }
@@ -64,11 +90,17 @@ class PieceDisplay extends Component {
         let supportingImageHTML = [];
 
         if (supportingImages.length > 1) {
-            supportingImageHTML = supportingImages.map(image => {
+            supportingImageHTML = supportingImages.map((image, index) => {
+                const imageSrc = `/${image}`;
+
                 return (
                     <SupportingImageButton
-                        imageSrc={image}
-                        onClick={this.changeImageDisplay}
+                        imageSrc={imageSrc}
+                        key={index}
+                        isActive={this.state.selectedThumbnail[index]}
+                        onClick={imageSrc =>
+                            this.changeImageDisplay(index, imageSrc)
+                        }
                     />
                 );
             });
