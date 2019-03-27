@@ -5,7 +5,7 @@ import Footer from '../Footer';
 import './PieceDisplay.scss';
 import SupportingImageButton from './SupportingImageButton.js';
 
-class PieceDisplay extends Component {
+class PieceDisplayPage extends Component {
     pieceData;
     constructor(props) {
         super(props);
@@ -134,4 +134,4 @@ class PieceDisplay extends Component {
     }
 }
 
-export default PieceDisplay;
+export default PieceDisplayPage;
