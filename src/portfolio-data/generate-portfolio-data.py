@@ -1,6 +1,7 @@
 import glob
 import json
 import pprint
+from PIL import Image
 
 sub_path = '../../public/'
 path = sub_path + 'portfolio-pieces/**/'
@@ -53,9 +54,20 @@ for row_key in portfolio_data:
         url_friendly_name = old_piece['name'].strip()
         url_friendly_name = url_friendly_name.replace(' ', '-')
 
+        main_image_path = sub_path + old_piece['urls'][0]
+
+        with Image.open(main_image_path) as img:
+            width, height = img.size
+
+        if width > height:
+            orientation = 'landscape'
+        else:
+            orientation = 'portrait'
+
         piece = {
             'piece_id': item_key,
             'description': old_piece['description'],
+            'orientation': orientation,
             'name': url_friendly_name,
             'urls': old_piece['urls']
         }
