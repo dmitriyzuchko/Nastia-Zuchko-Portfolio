@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import HomeButton from '../HomeButton/HomeButton';
 import { Link } from 'react-router-dom';
+import NavigationArrow from './NavigationArrow';
 
 export class PieceNavBar extends Component {
     switchDisplayedPiece(direction) {
-        // TODO
+        alert(direction);
     }
 
     render() {
@@ -14,13 +15,13 @@ export class PieceNavBar extends Component {
                     <HomeButton />
                 </Link>
                 <div id='nav-title'>nastia zuchko</div>
-                <i
-                    className='fas fa-arrow-left'
-                    onClick={this.switchDisplayedPiece.bind(null, 'left')}
+                <NavigationArrow
+                    direction='left'
+                    onClick={this.switchDisplayedPiece}
                 />
-                <i
-                    className='fas fa-arrow-right'
-                    onClick={this.switchDisplayedPiece.bind(null, 'right')}
+                <NavigationArrow
+                    direction='right'
+                    onClick={this.switchDisplayedPiece}
                 />
             </div>
         );
