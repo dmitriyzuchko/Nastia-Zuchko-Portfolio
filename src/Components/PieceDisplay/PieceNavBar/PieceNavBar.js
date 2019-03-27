@@ -11,7 +11,7 @@ export class PieceNavBar extends Component {
     }
 
     handleNavigation(direction) {
-        this.props.changeDisplayedPiece(direction);
+        this.props.navigate(direction);
     }
 
     render() {
