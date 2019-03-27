@@ -40,6 +40,12 @@ class PieceDisplay extends Component {
         console.log(this.state.selectedThumbnail);
     }
 
+    changeDisplayedPiece(direction) {
+        if (direction === 'left') {
+        } else if (direction === 'right') {
+        }
+    }
+
     obtainPieceData() {
         const name = this.props.match.params.name;
         let pieceData;
@@ -110,7 +116,7 @@ class PieceDisplay extends Component {
 
         return (
             <>
-                <PieceNavBar />
+                <PieceNavBar navigate={this.changeDisplayedPiece} />
                 <div id='piece-display' className={displayClass}>
                     <div id='piece-image' className={imageClass}>
                         <img src={mainImage} alt={name} />
