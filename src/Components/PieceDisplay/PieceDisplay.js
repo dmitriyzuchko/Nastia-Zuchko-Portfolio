@@ -30,10 +30,9 @@ class PieceDisplay extends Component {
 
         imageDisplay.src = imageSrc;
 
-        console.log(`Thumbnail number ${index + 1} clicked.`);
-
+        // Only one thumbnail can be highlighted or "on" at any time.
         this.setState({
-            selectedThumbnail: this.state.selectedThumbnail.map((v, i) =>
+            selectedThumbnail: this.state.selectedThumbnail.map((_, i) =>
                 i === index ? true : false
             )
         });
