@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 import NavigationArrow from './NavigationArrow';
 
 export class PieceNavBar extends Component {
-    switchDisplayedPiece(direction) {
-        alert(direction);
+    constructor(props) {
+        super(props);
+
+        this.handleNavigation = this.handleNavigation.bind(this);
+    }
+
+    handleNavigation(direction) {
+        this.props.changeDisplayedPiece(direction);
     }
 
     render() {
@@ -17,11 +23,11 @@ export class PieceNavBar extends Component {
                 <div id='nav-title'>nastia zuchko</div>
                 <NavigationArrow
                     direction='left'
-                    onClick={this.switchDisplayedPiece}
+                    onClick={this.handleNavigation}
                 />
                 <NavigationArrow
                     direction='right'
-                    onClick={this.switchDisplayedPiece}
+                    onClick={this.handleNavigation}
                 />
             </div>
         );
