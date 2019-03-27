@@ -6,28 +6,22 @@ import './PieceDisplay.scss';
 import SupportingImageButton from './SupportingImageButton.js';
 
 class PieceDisplay extends Component {
+    pieceData;
     constructor(props) {
         super(props);
 
-        this.state = { selectedThumbnail: [] };
+        this.state = { selectedThumbnail: [], orientation: 'landscape' };
         this.changeImageDisplay = this.changeImageDisplay.bind(this);
     }
 
     componentWillMount() {
         this.obtainPieceData();
+        this.setDisplayOrientationClass();
     }
 
-    setDisplayOrientationClass(e) {
-        let imageTag = e.target;
-        let pieceDisplay = document.getElementById('piece-display');
-        let pieceImage = document.getElementById('piece-image');
-
-        if (imageTag.width > imageTag.height) {
-            pieceDisplay.classList.add('landscape-display');
-            pieceImage.classList.add('landscape-image');
-        } else {
-            pieceDisplay.classList.add('portrait-display');
-            pieceImage.classList.add('portrait-image');
+    setDisplayOrientationClass() {
+        if (this.pieceData.orientation === 'portrait') {
+            this.state.orientation = 'portrait';
         }
     }
 
@@ -67,7 +61,7 @@ class PieceDisplay extends Component {
         }
 
         if (resultFound) {
-            this.setState({ pieceData: pieceData });
+            this.pieceData = pieceData;
 
             pieceData.urls.map((_, index) => {
                 if (index !== 0) {
@@ -82,10 +76,10 @@ class PieceDisplay extends Component {
     }
 
     render() {
-        let mainImage = `/${this.state.pieceData['urls'][0]}`;
-        const description = this.state.pieceData.description;
-        const name = this.state.pieceData.name;
-        const supportingImages = this.state.pieceData['urls'];
+        let mainImage = `/${this.pieceData['urls'][0]}`;
+        const description = this.pieceData.description;
+        const name = this.pieceData.name;
+        const supportingImages = this.pieceData['urls'];
 
         let supportingImageHTML = [];
 
@@ -106,16 +100,21 @@ class PieceDisplay extends Component {
             });
         }
 
+        const displayClass =
+            this.state.orientation === 'landscape'
+                ? 'landscape-display'
+                : 'portrait-display';
+        const imageClass =
+            this.state.orientation === 'landscape'
+                ? 'landscape-image'
+                : 'portrait-image';
+
         return (
             <>
                 <PieceNavBar />
-                <div id='piece-display'>
-                    <div id='piece-image'>
-                        <img
-                            src={mainImage}
-                            alt={name}
-                            onLoad={this.setDisplayOrientationClass}
-                        />
+                <div id='piece-display' className={displayClass}>
+                    <div id='piece-image' className={imageClass}>
+                        <img src={mainImage} alt={name} />
                     </div>
                     <div id='details-display'>
                         <div id='supporting-image-collection'>
