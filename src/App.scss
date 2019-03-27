@@ -26,6 +26,9 @@ body {
 #root {
     border-top: solid $accent-bar-height $color-accent;
     background: $color-secondary;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
