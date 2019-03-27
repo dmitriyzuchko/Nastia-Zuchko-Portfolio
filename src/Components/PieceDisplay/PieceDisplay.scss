@@ -55,9 +55,11 @@
 
     .active-thumb {
         opacity: 1;
+        border: $color-accent solid 3px;
     }
 
     .inactive-thumb {
-        opacity: 0.5;
+        opacity: 0.25;
+        border: #bfbfbf solid 3px;
     }
 }
