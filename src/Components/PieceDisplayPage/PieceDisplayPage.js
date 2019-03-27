@@ -6,9 +6,14 @@ import Footer from '../Footer';
 import './PieceDisplay.scss';
 
 class PieceDisplayPage extends Component {
+    portfolioPieces = [];
     pieceData;
+
     constructor(props) {
         super(props);
+
+        this.state = { selectedPieceIndex: 0 };
+        this.changeDisplayedPiece = this.changeDisplayedPiece.bind(this);
     }
 
     componentWillMount() {
@@ -16,8 +21,17 @@ class PieceDisplayPage extends Component {
     }
 
     changeDisplayedPiece(direction) {
+        const currentIndex = this.state.selectedPieceIndex;
+        const lastPieceIndex = this.portfolioPieces.length - 1;
+
         if (direction === 'left') {
+            const destinationIndex =
+                currentIndex <= 0 ? lastPieceIndex : currentIndex - 1;
+            this.setState({ selectedPieceIndex: destinationIndex });
         } else if (direction === 'right') {
+            const destinationIndex =
+                currentIndex >= lastPieceIndex ? 0 : currentIndex + 1;
+            this.setState({ selectedPieceIndex: destinationIndex });
         }
     }
 
@@ -36,7 +50,11 @@ class PieceDisplayPage extends Component {
                 if (pieceName === name) {
                     pieceData = piece;
                     resultFound = true;
+
+                    this.state.selectedPieceIndex = this.portfolioPieces.length;
                 }
+
+                this.portfolioPieces.push(piece);
             }
         }
 
@@ -48,10 +66,12 @@ class PieceDisplayPage extends Component {
     }
 
     render() {
+        const pieceData = this.portfolioPieces[this.state.selectedPieceIndex];
+
         return (
             <>
                 <PieceNavBar navigate={this.changeDisplayedPiece} />
-                <PieceDisplay pieceData={this.pieceData} />
+                <PieceDisplay pieceData={pieceData} />
                 <Footer />
             </>
         );
