@@ -5,29 +5,15 @@ export class PieceDisplay extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { selectedThumbnail: [], orientation: 'landscape' };
+        this.state = {
+            selectedThumbnail: [],
+            orientation: this.props.pieceData.orientation,
+            pieceName: this.props.pieceData.name
+        };
 
-        this.setDisplayOrientationClass = this.setDisplayOrientationClass.bind(
-            this
-        );
-        this.changeImageDisplay = this.changeImageDisplay.bind(this);
-    }
-
-    componentWillMount() {
-        this.setDisplayOrientationClass();
-        this.setThumbnailState();
-    }
-
-    setDisplayOrientationClass() {
-        if (this.props.pieceData.orientation === 'portrait') {
-            this.state.orientation = 'portrait';
-        }
-    }
-
-    setThumbnailState() {
         const supportingImages = this.props.pieceData.urls;
 
-        supportingImages.map((_, index) => {
+        supportingImages.forEach((_, index) => {
             if (index === 0) {
                 this.state.selectedThumbnail.push(true);
             } else {

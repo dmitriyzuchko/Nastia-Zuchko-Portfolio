@@ -13,26 +13,10 @@ class PieceDisplayPage extends Component {
         super(props);
 
         this.state = { selectedPieceIndex: 0 };
-        this.changeDisplayedPiece = this.changeDisplayedPiece.bind(this);
     }
 
     componentWillMount() {
         this.obtainPieceData();
-    }
-
-    changeDisplayedPiece(direction) {
-        const currentIndex = this.state.selectedPieceIndex;
-        const lastPieceIndex = this.portfolioPieces.length - 1;
-
-        if (direction === 'left') {
-            const destinationIndex =
-                currentIndex <= 0 ? lastPieceIndex : currentIndex - 1;
-            this.setState({ selectedPieceIndex: destinationIndex });
-        } else if (direction === 'right') {
-            const destinationIndex =
-                currentIndex >= lastPieceIndex ? 0 : currentIndex + 1;
-            this.setState({ selectedPieceIndex: destinationIndex });
-        }
     }
 
     obtainPieceData() {
@@ -70,7 +54,7 @@ class PieceDisplayPage extends Component {
 
         return (
             <>
-                <PieceNavBar navigate={this.changeDisplayedPiece} />
+                <PieceNavBar />
                 <PieceDisplay pieceData={pieceData} />
                 <Footer />
             </>
