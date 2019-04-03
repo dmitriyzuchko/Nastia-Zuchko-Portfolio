@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactForm from './ContactForm';
 import './Contact.scss';
-import PersonalPhoto from '../../resources/personal-photo.png';
+// import PersonalPhoto from '../../resources/personal-photo.png';
 
 const Contact = () => (
     <div id='contact-wrapper' className='container'>
