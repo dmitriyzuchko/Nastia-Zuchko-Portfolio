@@ -35,7 +35,9 @@ class PieceDisplayPage extends Component {
                     pieceData = piece;
                     resultFound = true;
 
-                    this.state.selectedPieceIndex = this.portfolioPieces.length;
+                    this.setState({
+                        selectedPieceIndex: this.portfolioPieces.length
+                    });
                 }
 
                 this.portfolioPieces.push(piece);

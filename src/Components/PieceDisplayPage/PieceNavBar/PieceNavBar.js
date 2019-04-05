@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import HomeButton from '../HomeButton/HomeButton';
 import { Link } from 'react-router-dom';
 
