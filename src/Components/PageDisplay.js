@@ -51,7 +51,9 @@ class PageDisplay extends Component {
                 {isModal ? (
                     <Route
                         path='/portfolio-piece/:name'
-                        component={PieceDisplayPage}
+                        render={routerProps => (
+                            <PieceDisplayPage isModal {...routerProps} />
+                        )}
                     />
                 ) : null}
             </>
