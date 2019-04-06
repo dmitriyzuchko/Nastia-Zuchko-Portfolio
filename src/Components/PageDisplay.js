@@ -34,6 +34,12 @@ class PageDisplay extends Component {
             '/portfolio-piece'
         );
 
+        if (isModal) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'scroll';
+        }
+
         return (
             <>
                 {isNotPortfolioPiece || isModal ? <SiteHead /> : null}

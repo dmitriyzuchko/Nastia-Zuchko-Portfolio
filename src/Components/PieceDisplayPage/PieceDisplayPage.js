@@ -15,10 +15,15 @@ class PieceDisplayPage extends Component {
         super(props);
 
         this.state = { selectedPieceIndex: 0 };
+        this.goBack = this.goBack.bind(this);
     }
 
     componentWillMount() {
         this.obtainPieceData();
+    }
+
+    goBack() {
+        this.props.history.go(-1);
     }
 
     obtainPieceData() {
@@ -59,11 +64,14 @@ class PieceDisplayPage extends Component {
         if (!this.pieceExists) return <Redirect to='/' />;
 
         return (
-            <>
-                <PieceNavBar />
-                <PieceDisplay pieceData={pieceData} />
-                <Footer />
-            </>
+            <div className={this.props.isModal ? 'modal' : ''}>
+                <div className='modal-background' onClick={this.goBack} />
+                <div className='piece-container'>
+                    <PieceNavBar />
+                    <PieceDisplay pieceData={pieceData} />
+                    <Footer />
+                </div>
+            </div>
         );
     }
 }
