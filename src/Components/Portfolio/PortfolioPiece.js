@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class PortfolioPiece extends Component {
     render() {
         const link = `/portfolio-piece/${this.props.name}`;
+        const imgSrc = `${window.location.origin}/${this.props.imageSrc}`;
         let wrapper_classes = 'portfolio-piece';
 
         wrapper_classes += this.props.sharesSpaceInRow
@@ -21,7 +22,7 @@ class PortfolioPiece extends Component {
             >
                 <img
                     className='portfolio-piece'
-                    src={this.props.imageSrc}
+                    src={imgSrc}
                     alt={this.props.name}
                 />
             </Link>
