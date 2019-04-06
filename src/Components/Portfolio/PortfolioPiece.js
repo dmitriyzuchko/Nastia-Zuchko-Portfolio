@@ -16,7 +16,7 @@ class PortfolioPiece extends Component {
                 className={wrapper_classes}
                 to={{
                     pathname: link,
-                    state: { fromPortfolio: true }
+                    state: { modal: true }
                 }}
             >
                 <img
