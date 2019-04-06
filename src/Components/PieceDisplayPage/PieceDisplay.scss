@@ -10,7 +10,6 @@
 #piece-image {
     display: flex;
     padding: 25px;
-    flex: 1.5;
 
     img {
         margin: auto;
@@ -20,17 +19,22 @@
 }
 
 #details-display {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    height: 80%;
+    margin: auto;
 
     #description {
         color: #fff;
         padding: 25px;
+        text-align: center;
     }
 }
 
 .portrait-image {
-    width: 50%;
     height: 100%;
+    width: 50%;
 }
 
 .landscape-display {
@@ -38,11 +42,11 @@
 }
 
 #supporting-image-collection {
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
     max-width: 600px;
-    align-content: flex-start;
+    margin: 0 auto;
+    justify-content: space-evenly;
 
     * {
         height: 100px;
@@ -61,5 +65,35 @@
     .inactive-thumb {
         opacity: 0.25;
         border: #bfbfbf solid 3px;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0px;
+    overflow-y: scroll;
+    width: 100%;
+
+    .piece-container {
+        position: relative;
+        z-index: 1;
+        background: $color-secondary;
+        width: 900px;
+        height: 100vh;
+        margin: auto;
+    }
+
+    #piece-image {
+        flex: 1.5 1;
+    }
+
+    .modal-background {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 0;
+        background: rgba($color: #000000, $alpha: 0.75);
+        width: 100vw;
+        height: 100vh;
     }
 }
