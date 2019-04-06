@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import PieceNavBar from './PieceNavBar/PieceNavBar.js';
 import PieceDisplay from './PieceDisplay.js';
@@ -8,6 +9,7 @@ import './PieceDisplay.scss';
 class PieceDisplayPage extends Component {
     portfolioPieces = [];
     pieceData;
+    pieceExists;
 
     constructor(props) {
         super(props);
@@ -21,8 +23,8 @@ class PieceDisplayPage extends Component {
 
     obtainPieceData() {
         const name = this.props.match.params.name;
+
         let pieceData;
-        let resultFound = false;
 
         for (let rowIndex in PortfolioData) {
             let row = PortfolioData[rowIndex]['items'];
@@ -33,7 +35,7 @@ class PieceDisplayPage extends Component {
 
                 if (pieceName === name) {
                     pieceData = piece;
-                    resultFound = true;
+                    this.pieceExists = true;
 
                     this.setState({
                         selectedPieceIndex: this.portfolioPieces.length
@@ -44,15 +46,17 @@ class PieceDisplayPage extends Component {
             }
         }
 
-        if (resultFound) {
+        if (this.pieceExists) {
             this.pieceData = pieceData;
         } else {
-            this.props.history.push('/no-match');
+            this.pieceExists = false;
         }
     }
 
     render() {
         const pieceData = this.portfolioPieces[this.state.selectedPieceIndex];
+
+        if (!this.pieceExists) return <Redirect to='/' />;
 
         return (
             <>
