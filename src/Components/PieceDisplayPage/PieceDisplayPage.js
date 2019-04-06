@@ -69,7 +69,7 @@ class PieceDisplayPage extends Component {
                 <div className='piece-container'>
                     <PieceNavBar />
                     <PieceDisplay pieceData={pieceData} />
-                    <Footer />
+                    {this.props.isModal ? <Footer /> : null}
                 </div>
             </div>
         );
