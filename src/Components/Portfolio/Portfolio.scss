@@ -8,7 +8,7 @@
 }
 
 .portfolio-row {
-    display: inline-flex;
+    display: flex;
     margin-bottom: 30px;
 
     .one-column {
@@ -31,5 +31,20 @@
     .one-column,
     .two-column {
         margin: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .portfolio-row {
+        flex-direction: column;
+        margin-bottom: auto;
+    }
+
+    .portfolio-row .one-column {
+        width: 95%;
+    }
+
+    .portfolio-row .two-column {
+        width: auto;
     }
 }
