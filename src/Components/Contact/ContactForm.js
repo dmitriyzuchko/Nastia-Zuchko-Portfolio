@@ -92,7 +92,9 @@ class ContactForm extends Component {
                     />
                     <textarea
                         id='form_message'
-                        className={this.state.validEmail ? null : 'wrong_input'}
+                        className={
+                            this.state.validMessage ? null : 'wrong_input'
+                        }
                         placeholder='Message'
                         value={this.state.message}
                         onChange={this.handleTextformChange}
