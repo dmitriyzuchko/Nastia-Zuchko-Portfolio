@@ -7,6 +7,7 @@ const Contact = () => (
     <div id='contact-wrapper' className='container'>
         <div id='about-me'>
             {/* <img id='personal-photo' src={PersonalPhoto} alt='Its me' /> */}
+            <h1>About</h1>
             <p>
                 Born in Ukraine on the April of 1996, yet moved to Brooklyn
                 after the age of 4, I grew up with an inclination towards the
