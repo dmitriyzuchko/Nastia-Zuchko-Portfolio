@@ -41,7 +41,15 @@ const Contact = () => (
                 create most of my work through Clip Studio Paint.
             </p>
         </div>
-        <ContactForm />
+        <div>
+            <ContactForm />
+            <div id='email_label'>
+                email:
+                <a href='mailto:nastiazuchko@gmail.com'>
+                    nastiazuchko@gmail.com
+                </a>
+            </div>
+        </div>
     </div>
 );
 
