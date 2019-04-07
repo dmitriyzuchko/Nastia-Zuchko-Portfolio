@@ -8,7 +8,9 @@ function PieceNavBar() {
             <Link to='/'>
                 <HomeButton />
             </Link>
-            <div id='nav-title'>nastia zuchko</div>
+            <div id='nav-title'>
+                <Link to='/'>nastia zuchko</Link>
+            </div>
         </div>
     );
 }
