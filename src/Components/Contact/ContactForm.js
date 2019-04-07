@@ -29,10 +29,8 @@ class ContactForm extends Component {
             message: this.state.message
         };
 
-        // emailjs.init('user_ptq8f9MxSUSgVHUHScUIo');
-        // emailjs.send('default', 'default_template', emailParams);
-        console.log('Email sent with params:');
-        console.log(emailParams);
+        emailjs.init('user_ptq8f9MxSUSgVHUHScUIo');
+        emailjs.send('default', 'default_template', emailParams);
         this.setState({ name: '', email: '', message: '' });
     }
 
