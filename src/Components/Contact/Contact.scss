@@ -20,6 +20,10 @@
         width: 90%;
     }
 
+    h1 {
+        display: none;
+    }
+
     p {
         margin: 10px auto;
     }
@@ -94,5 +98,26 @@
     a:hover,
     a:active {
         color: #fff;
+    }
+}
+
+@media (max-width: 425px) {
+    #contact-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    #about-me {
+        margin: auto;
+        width: 90%;
+    }
+
+    #contact-form {
+        width: 95%;
+    }
+
+    #about-me h1 {
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
     }
 }
