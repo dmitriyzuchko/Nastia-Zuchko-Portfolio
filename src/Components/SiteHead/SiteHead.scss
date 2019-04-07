@@ -50,7 +50,7 @@ nav {
 }
 
 #external-links {
-    display: inline-flex;
+    display: flex;
 
     .social-network-link {
         margin: auto 8px;
@@ -65,5 +65,33 @@ nav {
     a:hover,
     a:active {
         color: $color-accent;
+    }
+}
+
+@media (max-width: 425px) {
+    header {
+        height: auto;
+        margin-bottom: auto;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    #site-logo {
+        margin: auto;
+    }
+
+    nav {
+        margin-right: auto;
+        flex-direction: column;
+    }
+
+    #internal-links {
+        margin-right: 0;
+    }
+
+    #external-links {
+        margin: auto;
     }
 }
