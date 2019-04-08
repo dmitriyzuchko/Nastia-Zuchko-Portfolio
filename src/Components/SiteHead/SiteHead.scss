@@ -80,6 +80,8 @@ nav {
 
     #site-logo {
         margin: auto;
+        margin-bottom: 20px;
+        width: 85vw;
     }
 
     nav {
@@ -89,9 +91,10 @@ nav {
 
     #internal-links {
         margin-right: 0;
+        margin-bottom: 5px;
     }
 
     #external-links {
-        margin: auto;
+        justify-content: space-between;
     }
 }
