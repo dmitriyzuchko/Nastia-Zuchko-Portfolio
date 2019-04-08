@@ -27,7 +27,8 @@ class PageDisplay extends Component {
         const isModal = !!(
             location.state &&
             location.state.modal &&
-            this.previousLocation !== location
+            this.previousLocation !== location &&
+            !(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)
         );
 
         const isNotPortfolioPiece = !location.pathname.startsWith(
