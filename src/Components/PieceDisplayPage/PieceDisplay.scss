@@ -99,7 +99,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 800px) {
     .modal {
         height: 100%;
         overflow-x: hidden;
@@ -154,7 +154,7 @@
         width: 95%;
         margin: auto;
         display: flex;
-        height: 80vh;
+        height: 70vh;
 
         img {
             margin: auto;

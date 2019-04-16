@@ -8,7 +8,7 @@ const SiteHead = () => {
     return (
         <header>
             <div className='container'>
-                <Link to='/'>
+                <Link id='site-logo-wrapper' to='/'>
                     <img id='site-logo' src={HeaderLogo} alt='Website logo' />
                 </Link>
                 <nav>
