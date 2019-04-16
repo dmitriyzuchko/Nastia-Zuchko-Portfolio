@@ -67,7 +67,10 @@ class PieceDisplayPage extends Component {
             <div className={this.props.isModal ? 'modal' : ''}>
                 <div className='modal-background' onClick={this.goBack} />
                 <div className='piece-container'>
-                    <PieceNavBar />
+                    <PieceNavBar
+                        isModal={this.props.isModal}
+                        {...this.props.history}
+                    />
                     <PieceDisplay pieceData={pieceData} />
                     {this.props.isModal ? <Footer /> : null}
                 </div>
