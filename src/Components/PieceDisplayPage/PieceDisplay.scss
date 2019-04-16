@@ -36,6 +36,7 @@
 .portrait-image {
     height: 100%;
     width: 50%;
+    flex: 1.5 1;
 }
 
 .landscape-display {
@@ -84,8 +85,8 @@
         margin: auto;
     }
 
-    #piece-image {
-        flex: 1.5 1;
+    #piece-image img {
+        align-self: center;
     }
 
     .modal-background {
@@ -99,14 +100,13 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .modal {
         height: 100%;
         overflow-x: hidden;
     }
 
     .modal .piece-container {
-        height: auto;
         width: auto;
         overflow-x: hidden;
     }
@@ -117,11 +117,6 @@
 
     #piece-image {
         padding: 5px;
-
-        img {
-            margin: 0 auto;
-            align-self: center;
-        }
     }
 
     .modal #piece-image {
