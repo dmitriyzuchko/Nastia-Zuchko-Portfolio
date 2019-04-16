@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class PieceNavBar extends Component {
     constructor(props) {
@@ -10,11 +10,11 @@ class PieceNavBar extends Component {
 
     handleNavigation(e) {
         if (this.props.isModal) {
-            this.props.goBack();
+            this.props.history.goBack();
             // Enables goBack() to work in Safari.
             e.preventDefault();
         } else {
-            return <Redirect to='/' />;
+            this.props.history.push('/');
         }
     }
 
@@ -23,20 +23,17 @@ class PieceNavBar extends Component {
 
         return (
             <div id='piece-nav-bar'>
-                <Link to='/'>
-                    <div
-                        className='home-button'
-                        onClick={this.handleNavigation}
-                    >
+                <a onClick={this.handleNavigation}>
+                    <div className='home-button'>
                         <i className={buttonIcon} />
                     </div>
-                </Link>
+                </a>
                 <div id='nav-title'>
-                    <Link to='/'>nastia zuchko</Link>
+                    <a onClick={this.handleNavigation}>nastia zuchko</a>
                 </div>
             </div>
         );
     }
 }
 
-export default PieceNavBar;
+export default withRouter(PieceNavBar);
