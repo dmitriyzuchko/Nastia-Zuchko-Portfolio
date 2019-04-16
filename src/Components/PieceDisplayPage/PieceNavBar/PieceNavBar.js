@@ -23,13 +23,15 @@ class PieceNavBar extends Component {
 
         return (
             <div id='piece-nav-bar'>
-                <a onClick={this.handleNavigation}>
+                <button onClick={this.handleNavigation}>
                     <div className='home-button'>
                         <i className={buttonIcon} />
                     </div>
-                </a>
+                </button>
                 <div id='nav-title'>
-                    <a onClick={this.handleNavigation}>nastia zuchko</a>
+                    <button onClick={this.handleNavigation}>
+                        nastia zuchko
+                    </button>
                 </div>
             </div>
         );
