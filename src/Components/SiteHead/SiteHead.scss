@@ -26,11 +26,11 @@ nav {
     display: inline-flex;
     margin: auto;
     margin-right: 50px;
+    font-size: 27px;
 }
 
 #internal-links {
-    margin-right: 10px;
-    line-height: 2;
+    display: flex;
 
     .internal-link {
         margin: auto 10px;
@@ -40,7 +40,6 @@ nav {
     a:visited {
         text-decoration: none;
         color: #fff;
-        font-size: 1.5em;
     }
 
     a:hover,
@@ -51,6 +50,7 @@ nav {
 
 #external-links {
     display: flex;
+    margin-right: 10px;
 
     .social-network-link {
         margin: auto 8px;
@@ -59,12 +59,36 @@ nav {
     a,
     a:visited {
         color: #fff;
-        font-size: 1.75em;
     }
 
     a:hover,
     a:active {
         color: $color-accent;
+    }
+}
+
+#shop-links-wrapper {
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    #shop-links {
+        background: $color-accent;
+        border-radius: 5px;
+        font-size: 23px;
+        padding: 3px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        margin: 5px;
+    }
+
+    a:hover,
+    a:active {
+        text-decoration: underline;
     }
 }
 
@@ -96,5 +120,11 @@ nav {
 
     #external-links {
         justify-content: space-between;
+        margin: auto;
+    }
+
+    #shop-links-wrapper {
+        justify-content: center;
+        margin-top: 10px;
     }
 }
