@@ -8,9 +8,11 @@ class PieceNavBar extends Component {
         this.handleNavigation = this.handleNavigation.bind(this);
     }
 
-    handleNavigation() {
+    handleNavigation(e) {
         if (this.props.isModal) {
             this.props.goBack();
+            // Enables goBack() to work in Safari.
+            e.preventDefault();
         } else {
             return <Redirect to='/' />;
         }
