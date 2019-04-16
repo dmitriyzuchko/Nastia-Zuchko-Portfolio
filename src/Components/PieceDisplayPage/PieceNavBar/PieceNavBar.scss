@@ -22,6 +22,11 @@
         margin-right: 10px;
     }
 
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     a,
     a:visited {
         color: $color-accent;
@@ -30,13 +35,6 @@
     a:hover,
     a:active {
         color: #fff;
-    }
-
-    a,
-    a:visited,
-    a:hover,
-    a:active {
-        text-decoration: none;
     }
 }
 
