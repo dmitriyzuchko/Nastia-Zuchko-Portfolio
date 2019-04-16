@@ -33,8 +33,6 @@ export class PieceDisplay extends Component {
                 i === index ? true : false
             )
         });
-
-        console.log(this.state.selectedThumbnail);
     }
 
     render() {
