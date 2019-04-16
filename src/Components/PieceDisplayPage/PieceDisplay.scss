@@ -9,7 +9,7 @@
 
 #piece-image {
     display: flex;
-    padding: 25px;
+    padding: 0px 25px;
 
     img {
         margin: auto;
@@ -97,6 +97,12 @@
         background: rgba($color: #000000, $alpha: 0.75);
         width: 100vw;
         height: 100vh;
+    }
+}
+
+@media (min-width: 900px) {
+    .landscape-image {
+        height: 70vh;
     }
 }
 
