@@ -36,9 +36,18 @@ class PageDisplay extends Component {
         );
 
         if (isModal) {
+            const htmlTag = document.querySelector('html');
+
             document.body.style.overflowY = 'hidden';
+            htmlTag.style.overflowY = 'hidden';
+            // Necessary for Safari to treat the background as unscrollable
+            htmlTag.style.height = '100%';
         } else {
-            document.body.style.overflowY = 'scroll';
+            const htmlTag = document.querySelector('html');
+
+            document.body.style.overflowY = 'auto';
+            htmlTag.style.overflowY = 'auto';
+            htmlTag.style.height = 'auto';
         }
 
         return (
