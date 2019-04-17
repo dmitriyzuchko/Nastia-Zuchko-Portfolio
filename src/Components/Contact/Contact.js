@@ -44,7 +44,7 @@ const Contact = () => (
         </div>
         <div>
             <ContactForm />
-            <div id='email_label'>
+            <div id='email-label'>
                 email:
                 <a href='mailto:nastiazuchko@gmail.com'>
                     nastiazuchko@gmail.com

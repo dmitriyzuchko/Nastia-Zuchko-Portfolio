@@ -84,7 +84,7 @@
     }
 }
 
-#email_label {
+#email-label {
     width: 70%;
     margin: auto;
     margin-top: 10px;
@@ -112,7 +112,8 @@
         width: 90%;
     }
 
-    #contact-form {
+    #contact-form,
+    #email-label {
         width: 95%;
     }
 
