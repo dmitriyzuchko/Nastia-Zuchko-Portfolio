@@ -3,9 +3,7 @@
 #piece-nav-bar {
     display: flex;
     height: $piece-display-nav-height;
-    font-size: 24pt;
     padding: 10px;
-    color: $color-accent;
 
     .home-button,
     #nav-title,
@@ -22,18 +20,24 @@
         margin-right: 10px;
     }
 
-    a {
+    button {
         text-decoration: none;
         cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 24pt;
+        outline: none;
+        padding: 0px;
+        font-family: 'Kanit', sans-serif;
     }
 
-    a,
-    a:visited {
+    button,
+    button:visited {
         color: $color-accent;
     }
 
-    a:hover,
-    a:active {
+    button:hover,
+    button:active {
         color: #fff;
     }
 }
@@ -41,4 +45,10 @@
 #nav-title {
     text-align: center;
     flex-grow: 1;
+}
+
+@media (max-width: 900px) {
+    #piece-nav-bar .home-button {
+        margin: 0;
+    }
 }
