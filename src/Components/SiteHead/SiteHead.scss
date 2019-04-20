@@ -42,6 +42,10 @@ nav {
         margin: auto 10px;
     }
 
+    .active {
+        color: $color-accent !important;
+    }
+
     a,
     a:visited {
         text-decoration: none;

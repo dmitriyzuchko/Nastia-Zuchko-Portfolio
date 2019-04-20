@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import HeaderLogo from '../../resources/logo.svg';
 import SocialLink from '../SocialLink';
 import './SiteHead.scss';
@@ -13,12 +13,12 @@ const SiteHead = () => {
                 </Link>
                 <nav>
                     <div id='internal-links'>
-                        <Link className='internal-link' to='/'>
+                        <NavLink className='internal-link' exact to='/'>
                             Portfolio
-                        </Link>
-                        <Link className='internal-link' to='/contact'>
+                        </NavLink>
+                        <NavLink className='internal-link' to='/contact'>
                             Contact
-                        </Link>
+                        </NavLink>
                     </div>
                     <div id='external-links'>
                         <SocialLink
