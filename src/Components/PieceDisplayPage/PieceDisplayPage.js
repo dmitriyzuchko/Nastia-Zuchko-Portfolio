@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import PieceNavBar from './PieceNavBar/PieceNavBar.js';
@@ -6,77 +6,45 @@ import PieceDisplay from './PieceDisplay.js';
 import Footer from '../Footer';
 import './PieceDisplay.scss';
 
-class PieceDisplayPage extends Component {
-    portfolioPieces = [];
-    pieceData;
-    pieceExists;
+const PieceDisplayPage = props => {
+    const pieceName = props.match.params.name;
+    const pieceData = getPieceData(pieceName);
 
-    constructor(props) {
-        super(props);
+    const isModal = props.isModal;
+    const pieceDoesNotExist =
+        Object.keys(pieceData).length === 0 && pieceData.constructor === Object;
 
-        this.state = { selectedPieceIndex: 0 };
-        this.goBack = this.goBack.bind(this);
-    }
+    if (pieceDoesNotExist) return <Redirect to='' />;
 
-    componentWillMount() {
-        this.obtainPieceData();
-    }
+    return (
+        <div className={isModal ? 'modal' : ''}>
+            <div className='modal-background' onClick={props.history.goBack} />
+            <div className='piece-container'>
+                <PieceNavBar isModal={isModal} {...props.history} />
+                <PieceDisplay pieceData={pieceData} />
+                {isModal && <Footer />}
+            </div>
+        </div>
+    );
+};
 
-    goBack() {
-        this.props.history.go(-1);
-    }
+const getPieceData = name => {
+    let pieceData = {};
 
-    obtainPieceData() {
-        const name = this.props.match.params.name;
+    for (let rowIndex in PortfolioData) {
+        let row = PortfolioData[rowIndex]['items'];
 
-        let pieceData;
+        for (let piece_index in row) {
+            let piece = row[piece_index];
+            let pieceName = piece['name'].replace(/\s/g, '-');
 
-        for (let rowIndex in PortfolioData) {
-            let row = PortfolioData[rowIndex]['items'];
-
-            for (let piece_index in row) {
-                let piece = row[piece_index];
-                let pieceName = piece['name'].replace(/\s/g, '-');
-
-                if (pieceName === name) {
-                    pieceData = piece;
-                    this.pieceExists = true;
-
-                    this.setState({
-                        selectedPieceIndex: this.portfolioPieces.length
-                    });
-                }
-
-                this.portfolioPieces.push(piece);
+            if (pieceName === name) {
+                pieceData = piece;
             }
         }
-
-        if (this.pieceExists) {
-            this.pieceData = pieceData;
-        } else {
-            this.pieceExists = false;
-        }
     }
 
-    render() {
-        const pieceData = this.portfolioPieces[this.state.selectedPieceIndex];
-
-        if (!this.pieceExists) return <Redirect to='/' />;
-
-        return (
-            <div className={this.props.isModal ? 'modal' : ''}>
-                <div className='modal-background' onClick={this.goBack} />
-                <div className='piece-container'>
-                    <PieceNavBar
-                        isModal={this.props.isModal}
-                        {...this.props.history}
-                    />
-                    <PieceDisplay pieceData={pieceData} />
-                    {this.props.isModal ? <Footer /> : null}
-                </div>
-            </div>
-        );
-    }
-}
+    return pieceData;
+};
 
 export default PieceDisplayPage;
