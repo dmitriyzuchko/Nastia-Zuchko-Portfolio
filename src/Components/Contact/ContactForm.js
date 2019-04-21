@@ -1,111 +1,90 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import * as emailjs from 'emailjs-com';
 
-class ContactForm extends Component {
-    constructor(props) {
-        super(props);
+const ContactForm = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [validName, setValidName] = useState(true);
+    const [validEmail, setValidEmail] = useState(true);
+    const [validMessage, setValidMessage] = useState(true);
 
-        this.handleClick = this.handleClick.bind(this);
-        this.handleTextformChange = this.handleTextformChange.bind(this);
-        this.formIsValid = this.formIsValid.bind(this);
+    const formIsValid = () => {
+        let formIsValid = true;
 
-        this.state = {
-            name: '',
-            email: '',
-            message: '',
-            validName: true,
-            validEmail: true,
-            validMessage: true
-        };
-    }
+        setValidName(true);
+        setValidEmail(true);
+        setValidMessage(true);
 
-    handleClick(e) {
+        if (name === '') {
+            setValidName(false);
+            formIsValid = false;
+        }
+        if (email === '') {
+            setValidEmail(false);
+            formIsValid = false;
+        }
+        if (message === '') {
+            setValidMessage(false);
+            formIsValid = false;
+        }
+
+        return formIsValid;
+    };
+
+    const handleSubmit = e => {
         e.preventDefault();
-        if (!this.formIsValid()) return null;
+        if (!formIsValid()) return null;
 
         const emailParams = {
-            name: this.state.name,
-            email: this.state.email,
-            message: this.state.message
+            name: name,
+            email: email,
+            message: message
         };
 
         emailjs.init('user_ptq8f9MxSUSgVHUHScUIo');
         emailjs.send('default', 'default_template', emailParams);
-        this.setState({ name: '', email: '', message: '' });
-    }
 
-    formIsValid() {
-        let formIsValid = true;
-        let validInputs = {
-            validName: true,
-            validEmail: true,
-            validMessage: true
-        };
+        setName('');
+        setEmail('');
+        setMessage('');
+    };
 
-        if (this.state.name === '') {
-            validInputs.validName = false;
-            formIsValid = false;
-        }
-        if (this.state.email === '') {
-            validInputs.validEmail = false;
-            formIsValid = false;
-        }
-        if (this.state.message === '') {
-            validInputs.validMessage = false;
-            formIsValid = false;
-        }
-
-        this.setState(validInputs);
-
-        return formIsValid;
-    }
-
-    handleTextformChange(e) {
-        const textformName = e.target.id.replace('form_', '');
-        const textformValue = e.target.value;
-
-        this.setState({ [textformName]: textformValue });
-    }
-
-    render() {
-        return (
-            <div id='contact-form'>
-                <h1>Contact</h1>
-                <form>
-                    <input
-                        type='text'
-                        id='form_name'
-                        className={this.state.validName ? null : 'wrong_input'}
-                        placeholder='Name'
-                        value={this.state.name}
-                        onChange={this.handleTextformChange}
-                    />
-                    <input
-                        type='email'
-                        id='form_email'
-                        className={this.state.validEmail ? null : 'wrong_input'}
-                        placeholder='Email'
-                        value={this.state.email}
-                        onChange={this.handleTextformChange}
-                    />
-                    <textarea
-                        id='form_message'
-                        className={
-                            this.state.validMessage ? null : 'wrong_input'
-                        }
-                        placeholder='Message'
-                        value={this.state.message}
-                        onChange={this.handleTextformChange}
-                    />
-                    <div id='button-wrapper'>
-                        <button id='submit' onClick={this.handleClick}>
-                            Send
-                        </button>
-                    </div>
-                </form>
-            </div>
-        );
-    }
-}
+    return (
+        <div id='contact-form'>
+            <h1>Contact</h1>
+            <form>
+                <input
+                    type='text'
+                    id='form_name'
+                    className={!validName ? 'wrong_input' : null}
+                    placeholder='Name'
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                />
+                <input
+                    type='email'
+                    id='form_email'
+                    className={!validEmail ? 'wrong_input' : null}
+                    placeholder='Email'
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                />
+                <textarea
+                    id='form_message'
+                    className={!validMessage ? 'wrong_input' : null}
+                    placeholder='Message'
+                    value={message}
+                    onChange={e => setMessage(e.target.value)}
+                />
+                <div id='button-wrapper'>
+                    <button id='submit' onClick={handleSubmit}>
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
+};
 
 export default ContactForm;
