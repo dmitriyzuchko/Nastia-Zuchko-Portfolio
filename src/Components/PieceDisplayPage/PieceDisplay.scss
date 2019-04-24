@@ -70,6 +70,11 @@
     }
 }
 
+.piece-container {
+    width: 900px;
+    margin: auto;
+}
+
 .modal {
     position: fixed;
     top: 0px;
@@ -79,9 +84,7 @@
         position: relative;
         z-index: 1;
         background: $color-secondary;
-        width: 900px;
         height: 100vh;
-        margin: auto;
     }
 
     #piece-image img {
