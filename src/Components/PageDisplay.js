@@ -36,7 +36,7 @@ const PageDisplay = props => {
         if (originatesFromPortfolio) {
             setPreviousLocation(location);
         }
-    }, [location]);
+    }, [location.pathname]);
 
     const isModal = !!(
         location.state &&
