@@ -1,5 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const NoMatch = () => <div>This page doesn't exist.</div>;
+const NoMatch = () => (
+    <div class='no-match'>
+        <h1>404</h1>
+        <p>Not a valid URL</p>
+    </div>
+);
 
 export default NoMatch;
