@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import PieceNavBar from './PieceNavBar/PieceNavBar.js';
@@ -10,11 +10,15 @@ const PieceDisplayPage = props => {
     const pieceName = props.match.params.name;
     const pieceData = getPieceData(pieceName);
 
-    const isModal = props.isModal;
     const pieceDoesNotExist =
         Object.keys(pieceData).length === 0 && pieceData.constructor === Object;
-
     if (pieceDoesNotExist) return <Redirect to='' />;
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
+
+    const isModal = props.isModal;
 
     return (
         <div className={isModal ? 'modal' : ''}>
@@ -45,6 +49,16 @@ const getPieceData = name => {
     }
 
     return pieceData;
+};
+
+const scrollToTop = () => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
+        navigator.userAgent
+    );
+
+    if (isMobile) {
+        window.scrollTo(0, 0);
+    }
 };
 
 export default PieceDisplayPage;
