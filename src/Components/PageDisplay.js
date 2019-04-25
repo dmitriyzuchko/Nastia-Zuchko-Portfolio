@@ -6,21 +6,30 @@ import PortfolioDisplay from './Portfolio/PortfolioDisplay';
 import Contact from './Contact/Contact';
 import NoMatch from './NoMatch';
 import PieceDisplayPage from './PieceDisplayPage/PieceDisplayPage';
+import { enableScroll, disableScroll } from '../misc/ToggleScroll';
 
 const lockBodyScroll = shouldLock => {
     if (shouldLock) {
-        const htmlTag = document.querySelector('html');
-
-        document.body.style.overflowY = 'hidden';
-        htmlTag.style.overflowY = 'hidden';
-        // Necessary for Safari to treat the background as unscrollable
-        htmlTag.style.height = '100%';
+        // const htmlTag = document.querySelector('html');
+        // document.body.style.overflowY = 'hidden';
+        // htmlTag.style.overflowY = 'hidden';
+        // // Necessary for Safari to treat the background as unscrollable
+        // htmlTag.style.height = '100%';
+        // window.onwheel = () => {
+        //     console.log('Scroll is disabled.');
+        //     return false;
+        // };
+        disableScroll();
     } else {
-        const htmlTag = document.querySelector('html');
-
-        document.body.style.overflowY = 'auto';
-        htmlTag.style.overflowY = 'auto';
-        htmlTag.style.height = 'auto';
+        // const htmlTag = document.querySelector('html');
+        // document.body.style.overflowY = 'auto';
+        // htmlTag.style.overflowY = 'auto';
+        // htmlTag.style.height = 'auto';
+        // window.onwheel = () => {
+        //     console.log('Scroll is enabled.');
+        //     return true;
+        // };
+        enableScroll();
     }
 };
 
