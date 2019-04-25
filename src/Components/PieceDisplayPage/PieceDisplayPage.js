@@ -52,9 +52,7 @@ const getPieceData = name => {
 };
 
 const scrollToTop = () => {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
-        navigator.userAgent
-    );
+    const isMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isMobile) {
         window.scrollTo(0, 0);
