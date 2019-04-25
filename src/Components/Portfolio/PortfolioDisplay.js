@@ -1,12 +1,11 @@
 import React from 'react';
-import uuid from 'uuid';
 import PortfolioPiece from './PortfolioPiece';
 import PortfolioRow from './PortfolioRow';
 import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import './Portfolio.scss';
 
-const PortfolioDisplay = props => {
-    let portfolioPieces = PortfolioData.map(row => {
+const PortfolioDisplay = () => {
+    let portfolioPieces = PortfolioData.map((row, index) => {
         let pieces = [];
         let itemAmount = row['items'].length;
 
@@ -14,12 +13,12 @@ const PortfolioDisplay = props => {
             const pieceData = row['items'][piece];
             const firstImage = pieceData['urls'][0];
             const name = pieceData['name'];
-            const sharesSpaceInRow = itemAmount > 1 ? true : false;
-            const isMultiPart = pieceData['urls'].length > 1 ? true : false;
+            const sharesSpaceInRow = itemAmount > 1;
+            const isMultiPart = pieceData['urls'].length > 1;
 
-            const portfolio_element = (
+            const portfolioElement = (
                 <PortfolioPiece
-                    key={uuid.v4()}
+                    key={name}
                     imageSrc={firstImage}
                     name={name}
                     sharesSpaceInRow={sharesSpaceInRow}
@@ -27,10 +26,10 @@ const PortfolioDisplay = props => {
                 />
             );
 
-            pieces.push(portfolio_element);
+            pieces.push(portfolioElement);
         }
 
-        return <PortfolioRow key={uuid.v4()} pieces={pieces} />;
+        return <PortfolioRow key={index} pieces={pieces} />;
     });
 
     return (
