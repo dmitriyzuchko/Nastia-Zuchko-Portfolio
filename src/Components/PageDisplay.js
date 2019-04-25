@@ -8,14 +8,6 @@ import NoMatch from './NoMatch';
 import PieceDisplayPage from './PieceDisplayPage/PieceDisplayPage';
 import { enableScroll, disableScroll } from '../misc/ToggleScroll';
 
-const lockBodyScroll = shouldLock => {
-    if (shouldLock) {
-        disableScroll();
-    } else {
-        enableScroll();
-    }
-};
-
 const PageDisplay = props => {
     const [previousLocation, setPreviousLocation] = useState(props.location);
     const { location } = props;
@@ -67,6 +59,14 @@ const PageDisplay = props => {
             )}
         </>
     );
+};
+
+const lockBodyScroll = shouldLock => {
+    if (shouldLock) {
+        disableScroll();
+    } else {
+        enableScroll();
+    }
 };
 
 export default PageDisplay;
