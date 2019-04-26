@@ -9,3 +9,5 @@ $piece-display-nav-height: 80px;
 $piece-display-height: calc(
     100vh - #{$footer-height} - #{$accent-bar-height} - #{$piece-display-nav-height}
 );
+
+$main-font: 'Kanit', sans-serif;

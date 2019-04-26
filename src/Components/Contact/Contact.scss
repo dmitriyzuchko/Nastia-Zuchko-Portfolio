@@ -63,8 +63,8 @@
         max-width: 100%;
         width: 100%;
         font-size: 30px;
+        font-family: $main-font;
         border-radius: 3px;
-        border: 1px solid #ddd;
         resize: none;
     }
 
@@ -120,7 +120,8 @@
 
     #contact-form,
     #email-label {
-        width: 95%;
+        width: 80%;
+        max-width: 80%;
     }
 
     #about-me h1 {
