@@ -18,6 +18,8 @@
 /build
 
 # misc
+._*
+*.key
 .DS_Store
 portfolio
 portfolio.pub
