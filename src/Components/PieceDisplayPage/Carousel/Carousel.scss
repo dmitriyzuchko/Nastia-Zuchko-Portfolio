@@ -1,0 +1,56 @@
+@import './../../../variables.scss';
+
+.carousel-wrapper {
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    .carousel {
+        overflow: hidden;
+        display: flex;
+    }
+}
+
+.carousel-item {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-shrink: 0;
+
+    img {
+        object-fit: contain;
+        max-height: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.arrow {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 50%;
+    display: flex;
+
+    i {
+        margin: auto;
+        font-size: 25px;
+        color: #fff;
+    }
+}
+
+.right-arrow {
+    right: 0px;
+}
+
+.left-arrow i {
+    margin-left: 20px;
+}
+
+.right-arrow i {
+    margin-right: 20px;
+}
+
+.arrow:hover i {
+    color: $color-accent;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SupportingImageButton from './SupportingImageButton';
+import Carousel from './Carousel/Carousel';
 
 const PieceDisplay = props => {
     const thumbnails = props.pieceData.urls.map((_, index) => index === 0);
@@ -22,13 +23,17 @@ const PieceDisplay = props => {
 
     return (
         <div id='piece-display' className={`${pieceData.orientation}-display`}>
-            <div id='piece-image' className={`${pieceData.orientation}-image`}>
-                <img
+            {/* <div id='piece-image' className={`${pieceData.orientation}-image`}> */}
+            {/* <img
                     ref={imageDisplayRef}
                     src={mainImage}
                     alt={pieceData.name}
-                />
-            </div>
+                /> */}
+            <Carousel
+                pieceData={pieceData}
+                className={`${pieceData.orientation}-image`}
+            />
+            {/* </div> */}
             <div id='details-display'>
                 <div id='supporting-image-collection'>
                     {supportingImages.length > 1 &&
