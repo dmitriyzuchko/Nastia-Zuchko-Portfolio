@@ -6,6 +6,7 @@ import PortfolioDisplay from './Portfolio/PortfolioDisplay';
 import Contact from './Contact/Contact';
 import NoMatch from './NoMatch';
 import PieceDisplayPage from './PieceDisplayPage/PieceDisplayPage';
+import { isiOS } from '../misc/DeviceCheck';
 import { enableScroll, disableScroll } from '../misc/ToggleScroll';
 
 const PageDisplay = props => {
@@ -26,7 +27,7 @@ const PageDisplay = props => {
         location.state &&
         location.state.modal &&
         previousLocation !== location &&
-        !(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)
+        (!isiOS() && !window.MSStream)
     );
 
     const isNotPortfolioPiece = !location.pathname.startsWith(
