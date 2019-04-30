@@ -1,52 +1,79 @@
-import React, { useState } from 'react';
-import SupportingImageButton from './SupportingImageButton';
+import React, { useState, useEffect } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import QueryString from 'query-string';
+import { isMobile } from '../../misc/DeviceCheck';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import './Carousel.scss';
 
 const PieceDisplay = props => {
-    const thumbnails = props.pieceData.urls.map((_, index) => index === 0);
-    const [selectedThumbnail, setSelectedThumbnail] = useState(thumbnails);
+    const pieceData = props.pieceData;
+    const gallery = pieceData.urls;
+    const [index, setIndex] = useState(0);
 
-    const imageDisplayRef = React.createRef();
-    const changeImageDisplay = (newIndex, imageSrc) => {
-        imageDisplayRef.current.src = imageSrc;
+    const handleArrowKeys = e => {
+        const code = e.which || e.keyCode;
 
-        setSelectedThumbnail(
-            selectedThumbnail.map((_, index) =>
-                index === newIndex ? true : false
-            )
-        );
+        console.log(`This is running`);
+
+        // Left
+        if (code === '37') {
+            const newIndex = (index - 1 + gallery.length) % gallery.length;
+            setIndex(newIndex);
+        }
+        // Right
+        else if (code === '39') {
+            const newIndex = (index + 1) % gallery.length;
+            setIndex(newIndex);
+        }
     };
 
-    const pieceData = props.pieceData;
-    const mainImage = `/${pieceData['urls'][0]}`;
-    const supportingImages = pieceData['urls'];
+    useEffect(() => {
+        const urlParams = QueryString.parse(window.location.search);
+        const paramIndex = urlParams.illustration;
+
+        if (paramIndex && paramIndex !== index) setIndex(paramIndex - 1);
+        else if (!paramIndex) {
+            window.history.replaceState(
+                null,
+                null,
+                window.location.pathname + `?illustration=${index + 1}`
+            );
+        }
+
+        window.addEventListener('keypress', handleArrowKeys, true);
+
+        // return window.removeEventListener('keypress', handleArrowKeys, true);
+    }, []);
+
+    useEffect(() => {
+        const urlParams = QueryString.parse(window.location.search);
+
+        if (urlParams.illustration !== index + 1) {
+            window.history.replaceState(
+                null,
+                null,
+                window.location.pathname + `?illustration=${index + 1}`
+            );
+        }
+    }, [index]);
 
     return (
-        <div id='piece-display' className={`${pieceData.orientation}-display`}>
-            <div id='piece-image' className={`${pieceData.orientation}-image`}>
-                <img
-                    ref={imageDisplayRef}
-                    src={mainImage}
-                    alt={pieceData.name}
-                />
-            </div>
-            <div id='details-display'>
-                <div id='supporting-image-collection'>
-                    {supportingImages.length > 1 &&
-                        supportingImages.map((image, index) => {
-                            return (
-                                <SupportingImageButton
-                                    imageSrc={`/${image}`}
-                                    key={index}
-                                    isActive={selectedThumbnail[index]}
-                                    onClick={imageSrc =>
-                                        changeImageDisplay(index, imageSrc)
-                                    }
-                                />
-                            );
-                        })}
-                </div>
-                <div id='description'>&emsp;{pieceData.description}</div>
-            </div>
+        <div id='piece-display'>
+            <Carousel
+                infiniteLoop
+                showThumbs={false}
+                showStatus={false}
+                showArrows={!isMobile()}
+                showIndicators={gallery.length > 1}
+                onChange={newIndex => setIndex(newIndex)}
+                selectedItem={+index}
+            >
+                {gallery.map((url, index) => {
+                    return (
+                        <img key={`image-${index}`} src={`/${url}`} alt='' />
+                    );
+                })}
+            </Carousel>
         </div>
     );
 };

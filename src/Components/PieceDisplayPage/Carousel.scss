@@ -1,0 +1,47 @@
+@import './../../variables.scss';
+
+.carousel {
+    height: $piece-display-height;
+
+    .slide {
+        display: flex;
+        margin: auto;
+        background: none;
+    }
+}
+
+.slide img {
+    height: $piece-display-height;
+    object-fit: contain;
+}
+
+.carousel.carousel-slider .control-arrow {
+    color: $color-accent;
+}
+
+.carousel .control-next.control-arrow:before {
+    border-left: 8px solid $color-accent;
+}
+
+.carousel .control-prev.control-arrow:before {
+    border-right: 8px solid $color-accent;
+}
+
+.control-dots .selected {
+    background: $color-accent !important;
+}
+
+.carousel .control-dots {
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+}
+
+.carousel .control-dots .dot {
+    opacity: 1;
+    box-shadow: none;
+}
