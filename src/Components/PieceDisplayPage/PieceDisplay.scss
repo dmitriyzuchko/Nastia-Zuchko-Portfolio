@@ -5,6 +5,10 @@
     display: flex;
     margin: auto;
     height: $piece-display-height;
+
+    > div {
+        margin: auto;
+    }
 }
 
 #piece-image {
