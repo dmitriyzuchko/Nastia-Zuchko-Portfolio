@@ -28,7 +28,7 @@ const SiteHead = () => {
                             >
                                 Prints
                             </a>
-                            <i class='fas fa-shopping-bag' />
+                            <i className='fas fa-shopping-bag' />
                             <a
                                 className='shop-link'
                                 href='https://society6.com/nastyazuchko'
