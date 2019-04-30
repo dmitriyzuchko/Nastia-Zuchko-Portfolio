@@ -20,6 +20,23 @@ const SiteHead = () => {
                             Contact
                         </NavLink>
                     </div>
+                    <div id='shop-links-wrapper'>
+                        <div id='shop-links'>
+                            <a
+                                className='shop-link'
+                                href='https://www.inprnt.com/gallery/nastiazuchko/'
+                            >
+                                Prints
+                            </a>
+                            <i class='fas fa-shopping-bag' />
+                            <a
+                                className='shop-link'
+                                href='https://society6.com/nastyazuchko'
+                            >
+                                Merch
+                            </a>
+                        </div>
+                    </div>
                     <div id='external-links'>
                         <SocialLink
                             socialNetwork='wordpress'
@@ -33,23 +50,6 @@ const SiteHead = () => {
                             socialNetwork='instagram'
                             username='nastiazuchko'
                         />
-                    </div>
-                    <div id='shop-links-wrapper'>
-                        <div id='shop-links'>
-                            <a
-                                className='shop-link'
-                                href='https://www.inprnt.com/gallery/nastiazuchko/'
-                            >
-                                Prints
-                            </a>
-                            |
-                            <a
-                                className='shop-link'
-                                href='https://society6.com/nastyazuchko'
-                            >
-                                Merch
-                            </a>
-                        </div>
                     </div>
                 </nav>
             </div>

@@ -37,13 +37,10 @@ nav {
 
 #internal-links {
     display: flex;
+    margin-right: 10px;
 
     .internal-link {
         margin: auto 10px;
-    }
-
-    .active {
-        color: $color-accent !important;
     }
 
     a,
@@ -60,7 +57,6 @@ nav {
 
 #external-links {
     display: flex;
-    margin-right: 10px;
 
     .social-network-link {
         margin: auto 8px;
@@ -82,12 +78,15 @@ nav {
     position: relative;
     display: flex;
     align-items: center;
+    margin-right: 10px;
 
     #shop-links {
         background: $color-accent;
-        border-radius: 5px;
-        font-size: 23px;
-        padding: 3px;
+        border-radius: 30px;
+        font-size: 20px;
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
     }
 
     a {
@@ -99,6 +98,14 @@ nav {
     a:hover,
     a:active {
         text-decoration: underline;
+    }
+
+    a:nth-child(1) {
+        margin-right: 10px;
+    }
+
+    a:nth-child(3) {
+        margin-left: 10px;
     }
 }
 
