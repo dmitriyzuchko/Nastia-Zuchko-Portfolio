@@ -5,8 +5,10 @@
   "dependencies": {
     "emailjs-com": "^2.3.2",
     "node-sass": "^4.11.0",
+    "query-string": "^6.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-responsive-carousel": "^3.1.49",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.1",
