@@ -4,6 +4,7 @@ import PortfolioData from '../../portfolio-data/portfolio_data.json';
 import PieceNavBar from './PieceNavBar/PieceNavBar.js';
 import PieceDisplay from './PieceDisplay.js';
 import Footer from '../Footer';
+import { isMobile } from '../../misc/DeviceCheck';
 import './PieceDisplay.scss';
 
 const PieceDisplayPage = props => {
@@ -52,9 +53,7 @@ const getPieceData = name => {
 };
 
 const scrollToTop = () => {
-    const isMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (isMobile) {
+    if (isMobile()) {
         window.scrollTo(0, 0);
     }
 };
