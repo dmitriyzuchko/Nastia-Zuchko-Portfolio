@@ -18,10 +18,16 @@ const PortfolioPiece = props => {
                 state: { modal: true }
             }}
         >
-            <img className='portfolio-piece' src={imgSrc} alt={props.name} />
-            {gallerySize > 1 && (
-                <div className='gallery-size-indicator'>{gallerySize}</div>
-            )}
+            <div>
+                <div className='piece-wrapper'>
+                    <img src={imgSrc} alt={props.name} />
+                    {gallerySize > 1 && (
+                        <div className='gallery-size-indicator'>
+                            <a>{`+${gallerySize}`}</a>
+                        </div>
+                    )}
+                </div>
+            </div>
         </Link>
     );
 };
