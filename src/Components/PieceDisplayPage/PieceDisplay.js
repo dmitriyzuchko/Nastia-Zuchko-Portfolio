@@ -11,17 +11,12 @@ const PieceDisplay = props => {
     const [index, setIndex] = useState(0);
 
     const handleArrowKeys = e => {
-        const code = e.which || e.keyCode;
+        const code = e.keyCode.toString();
 
-        console.log(`This is running`);
-
-        // Left
         if (code === '37') {
             const newIndex = (index - 1 + gallery.length) % gallery.length;
             setIndex(newIndex);
-        }
-        // Right
-        else if (code === '39') {
+        } else if (code === '39') {
             const newIndex = (index + 1) % gallery.length;
             setIndex(newIndex);
         }
@@ -39,14 +34,12 @@ const PieceDisplay = props => {
                 window.location.pathname + `?illustration=${index + 1}`
             );
         }
-
-        window.addEventListener('keypress', handleArrowKeys, true);
-
-        // return window.removeEventListener('keypress', handleArrowKeys, true);
     }, []);
 
     useEffect(() => {
         const urlParams = QueryString.parse(window.location.search);
+
+        window.addEventListener('keyup', handleArrowKeys, true);
 
         if (urlParams.illustration !== index + 1) {
             window.history.replaceState(
@@ -55,6 +48,8 @@ const PieceDisplay = props => {
                 window.location.pathname + `?illustration=${index + 1}`
             );
         }
+
+        return () => window.removeEventListener('keyup', handleArrowKeys, true);
     }, [index]);
 
     return (
