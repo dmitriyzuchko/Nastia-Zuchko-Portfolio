@@ -35,21 +35,29 @@
     }
 }
 
-#portfolio-display .container {
-    width: 900px;
+@media (min-width: 900px) {
+    #portfolio-display .container {
+        width: 900px;
+    }
 }
 
 @media (max-width: 425px) {
     .portfolio-row {
         flex-direction: column;
         margin-bottom: auto;
-    }
 
-    .portfolio-row .one-column {
-        width: 95%;
-    }
+        .one-column {
+            width: 95%;
+            margin: auto;
+        }
 
-    .portfolio-row .two-column {
-        width: auto;
+        .two-column {
+            width: auto;
+        }
+
+        .two-column:nth-child(1),
+        .two-column:nth-child(2) {
+            text-align: center;
+        }
     }
 }
