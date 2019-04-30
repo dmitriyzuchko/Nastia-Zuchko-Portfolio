@@ -27,7 +27,7 @@ const PageDisplay = props => {
         location.state &&
         location.state.modal &&
         previousLocation !== location &&
-        (!isiOS() && !window.MSStream)
+        !isiOS()
     );
 
     const isNotPortfolioPiece = !location.pathname.startsWith(
