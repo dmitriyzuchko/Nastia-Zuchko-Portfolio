@@ -14,7 +14,7 @@
 
         .portfolio-piece {
             max-width: 100%;
-            max-height: 80vh;
+            max-height: 90vh;
         }
     }
 
@@ -26,10 +26,17 @@
         }
     }
 
-    .one-column,
-    .two-column {
-        margin: auto;
+    .two-column:nth-child(1) {
+        text-align: left;
     }
+
+    .two-column:nth-child(2) {
+        text-align: right;
+    }
+}
+
+#portfolio-display .container {
+    width: 900px;
 }
 
 @media (max-width: 425px) {
