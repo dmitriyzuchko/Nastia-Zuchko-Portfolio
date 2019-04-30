@@ -29,7 +29,6 @@ body {
 
 #root {
     border-top: solid $accent-bar-height $color-accent;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -67,5 +66,11 @@ footer {
 @media (max-width: 1099px) {
     .container {
         width: 100%;
+    }
+}
+
+@media (min-width: 425px) {
+    #root {
+        min-height: 100vh;
     }
 }

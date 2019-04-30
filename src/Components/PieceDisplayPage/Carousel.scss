@@ -1,17 +1,12 @@
 @import './../../variables.scss';
 
-.carousel {
-    height: $piece-display-height;
-
-    .slide {
-        display: flex;
-        margin: auto;
-        background: none;
-    }
+.carousel .slide {
+    margin: auto;
+    background: none;
 }
 
 .slide img {
-    height: $piece-display-height;
+    max-height: $piece-display-height;
     object-fit: contain;
 }
 
