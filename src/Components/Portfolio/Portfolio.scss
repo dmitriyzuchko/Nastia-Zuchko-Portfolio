@@ -102,9 +102,9 @@
             width: auto;
         }
 
-        .two-column:nth-child(1),
-        .two-column:nth-child(2) {
-            text-align: center;
+        .two-column:nth-child(1) div,
+        .two-column:nth-child(2) div {
+            margin: auto;
         }
     }
 }
