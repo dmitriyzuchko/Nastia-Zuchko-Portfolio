@@ -6,30 +6,26 @@ import './Portfolio.scss';
 
 const PortfolioDisplay = () => {
     let portfolioPieces = PortfolioData.map((row, index) => {
+        const itemAmount = row.items.length;
         let pieces = [];
-        let itemAmount = row['items'].length;
 
-        for (let piece in row['items']) {
-            const pieceData = row['items'][piece];
-            const firstImage = pieceData['urls'][0];
-            const name = pieceData['name'];
-            const sharesSpaceInRow = itemAmount > 1;
-            const isMultiPart = pieceData['urls'].length > 1;
+        row.items.forEach(piece => {
+            const firstImage = piece.urls[0];
 
             const portfolioElement = (
                 <PortfolioPiece
-                    key={name}
+                    key={piece.name}
                     imageSrc={firstImage}
-                    name={name}
-                    sharesSpaceInRow={sharesSpaceInRow}
-                    isMultiPart={isMultiPart}
+                    name={piece.name}
+                    sharesSpaceInRow={itemAmount > 1}
+                    gallerySize={piece.urls.length}
                 />
             );
 
             pieces.push(portfolioElement);
-        }
+        });
 
-        return <PortfolioRow key={index} pieces={pieces} />;
+        return <PortfolioRow key={`row-${index}`} pieces={pieces} />;
     });
 
     return (
