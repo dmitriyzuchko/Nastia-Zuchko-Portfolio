@@ -55,7 +55,7 @@ const PieceDisplay = props => {
     return (
         <div id='piece-display'>
             <Carousel
-                infiniteLoop
+                infiniteLoop={gallery.length > 1}
                 showThumbs={false}
                 showStatus={false}
                 showArrows={!isMobile()}
