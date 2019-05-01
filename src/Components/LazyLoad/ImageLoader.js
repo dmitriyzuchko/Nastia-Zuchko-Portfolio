@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LazyLoad from 'react-lazyload';
 import './ImageLoader.scss';
 
 const _loaded = {};
@@ -16,13 +17,15 @@ const ImageLoader = props => {
     className = `${className} ${loaded ? loadedClassName : loadingClassName}`;
     return (
         <div className={!loaded ? 'loading-wrapper' : ''}>
-            <img
-                src={props.src}
-                alt={props.alt}
-                onClick={props.onClick}
-                className={className}
-                onLoad={onLoad}
-            />
+            <LazyLoad offset={200} height={500} once>
+                <img
+                    src={props.src}
+                    alt={props.alt}
+                    onClick={props.onClick}
+                    className={className}
+                    onLoad={onLoad}
+                />
+            </LazyLoad>
         </div>
     );
 };
