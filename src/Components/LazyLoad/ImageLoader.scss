@@ -6,11 +6,22 @@
         opacity: 1;
     }
 }
+
+@keyframes glowingBackground {
+    from {
+        background-color: #545454;
+    }
+    to {
+        background-color: #494949;
+    }
+}
+
 .img-loading {
     opacity: 0;
     width: 100%;
     height: auto;
 }
+
 .img-loaded {
     animation: fadeInImg cubic-bezier(0.23, 1, 0.32, 1) 1;
     position: relative;
@@ -20,6 +31,8 @@
     animation-delay: 0.1s;
 }
 
-.is-visible {
-    height: auto !important;
+.loading-wrapper {
+    background-color: #545454;
+    border-radius: 5px;
+    animation: glowingBackground 2s ease-in-out infinite alternate-reverse;
 }
