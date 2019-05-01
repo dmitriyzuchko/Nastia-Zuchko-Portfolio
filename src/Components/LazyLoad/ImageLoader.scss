@@ -38,3 +38,17 @@
     border-radius: 5px;
     animation: glowingBackground 2s ease-in-out infinite alternate-reverse;
 }
+
+@media (max-width: 500px) {
+    .loading-wrapper {
+        min-height: 400px;
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 400px) {
+    .loading-wrapper {
+        min-height: 300px;
+        min-width: 300px;
+    }
+}
