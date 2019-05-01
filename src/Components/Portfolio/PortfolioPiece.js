@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
 import ImageLoader from '../LazyLoad/ImageLoader';
-
-const Placeholder = () => {
-    return <div height='700px' className='lazy-image-placeholder' />;
-};
+import PlaceholderImage from '../LazyLoad/ImageLoader';
 
 const PortfolioPiece = props => {
     const link = `/portfolio-piece/${props.name}`;
@@ -27,7 +24,7 @@ const PortfolioPiece = props => {
             <LazyLoad
                 offset={200}
                 height={700}
-                placeholder={<Placeholder />}
+                placeholder={<PlaceholderImage />}
                 once
             >
                 <div className='piece-wrapper'>
