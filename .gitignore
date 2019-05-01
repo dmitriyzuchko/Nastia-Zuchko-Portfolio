@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 /.firebase
+/.vscode
 .pnp.js
 
 #portfolio pieces
