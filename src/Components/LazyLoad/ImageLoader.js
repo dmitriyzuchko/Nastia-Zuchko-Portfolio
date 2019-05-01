@@ -15,13 +15,15 @@ const ImageLoader = props => {
 
     className = `${className} ${loaded ? loadedClassName : loadingClassName}`;
     return (
-        <img
-            src={props.src}
-            alt={props.alt}
-            onClick={props.onClick}
-            className={className}
-            onLoad={onLoad}
-        />
+        <div className={!loaded ? 'loading-wrapper' : ''}>
+            <img
+                src={props.src}
+                alt={props.alt}
+                onClick={props.onClick}
+                className={className}
+                onLoad={onLoad}
+            />
+        </div>
     );
 };
 
