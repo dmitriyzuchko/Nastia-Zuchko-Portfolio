@@ -12,10 +12,6 @@
     .one-column {
         width: 100%;
 
-        .piece-wrapper {
-            width: 100%;
-        }
-
         img {
             max-width: 100%;
             max-height: 700px;
@@ -80,6 +76,14 @@
         rgba(179, 122, 12, 1) 0%,
         rgba(219, 149, 11, 1) 100%
     );
+}
+
+.lazy-image-placeholder {
+    height: 100%;
+    min-height: 600px;
+    width: 100%;
+    background: #cecece;
+    border-radius: 5px;
 }
 
 @media (min-width: 900px) {
