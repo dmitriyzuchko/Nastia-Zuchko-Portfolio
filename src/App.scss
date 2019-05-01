@@ -2,19 +2,23 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body,
 html {
     min-height: 100%;
     position: relative;
-    margin-left: calc(100vw - 100%);
+}
+
+html {
     font-family: $main-font;
-    margin: 0;
-    padding: 0;
+    border-top: solid $accent-bar-height $color-accent;
 }
 
 body {
+    margin-left: calc(100vw - 100%);
     background: $color-secondary;
     background: linear-gradient(
         180deg,
@@ -29,7 +33,6 @@ body {
 }
 
 #root {
-    border-top: solid $accent-bar-height $color-accent;
     display: flex;
     flex-direction: column;
 }
