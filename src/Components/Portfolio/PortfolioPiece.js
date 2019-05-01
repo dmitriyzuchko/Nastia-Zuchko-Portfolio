@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 import PropTypes from 'prop-types';
+import ImageLoader from './ImageLoader';
 
 const PortfolioPiece = props => {
     const link = `/portfolio-piece/${props.name}`;
@@ -18,16 +20,16 @@ const PortfolioPiece = props => {
                 state: { modal: true }
             }}
         >
-            <div>
+            <LazyLoad offsetVertical={500} height={700} debounce={false}>
                 <div className='piece-wrapper'>
-                    <img src={imgSrc} alt={props.name} />
+                    <ImageLoader src={imgSrc} alt={props.name} />
                     {gallerySize > 1 && (
                         <div className='gallery-size-indicator'>
                             <p>{`+${gallerySize}`}</p>
                         </div>
                     )}
                 </div>
-            </div>
+            </LazyLoad>
         </Link>
     );
 };
