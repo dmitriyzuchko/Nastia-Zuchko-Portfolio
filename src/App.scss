@@ -78,3 +78,21 @@ footer {
         min-height: 100vh;
     }
 }
+
+@media (max-width: 425px) {
+    .no-match {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 55vh;
+    }
+
+    .no-match h1 {
+        font-size: 120px;
+        margin-top: auto;
+    }
+
+    .no-match p {
+        margin-bottom: auto;
+    }
+}
