@@ -23,7 +23,7 @@ const PortfolioPiece = props => {
                     <img src={imgSrc} alt={props.name} />
                     {gallerySize > 1 && (
                         <div className='gallery-size-indicator'>
-                            <a>{`+${gallerySize}`}</a>
+                            <p>{`+${gallerySize}`}</p>
                         </div>
                     )}
                 </div>
