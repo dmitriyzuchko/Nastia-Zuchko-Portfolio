@@ -4,6 +4,10 @@ import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
 import ImageLoader from '../LazyLoad/ImageLoader';
 
+const Placeholder = () => {
+    return <div height='700px' className='lazy-image-placeholder' />;
+};
+
 const PortfolioPiece = props => {
     const link = `/portfolio-piece/${props.name}`;
     const imgSrc = `${window.location.origin}/${props.imageSrc}`;
@@ -20,7 +24,12 @@ const PortfolioPiece = props => {
                 state: { modal: true }
             }}
         >
-            <LazyLoad offset={500} height={700} once>
+            <LazyLoad
+                offset={200}
+                height={700}
+                placeholder={<Placeholder />}
+                once
+            >
                 <div className='piece-wrapper'>
                     <ImageLoader src={imgSrc} alt={props.name} />
                     {gallerySize > 1 && (
