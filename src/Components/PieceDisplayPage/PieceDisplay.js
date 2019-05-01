@@ -4,6 +4,7 @@ import QueryString from 'query-string';
 import { isMobile } from '../../misc/DeviceCheck';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Carousel.scss';
+import ImageLoader from '../LazyLoad/ImageLoader';
 
 const PieceDisplay = props => {
     const pieceData = props.pieceData;
@@ -64,9 +65,7 @@ const PieceDisplay = props => {
                 selectedItem={+index}
             >
                 {gallery.map((url, index) => {
-                    return (
-                        <img key={`image-${index}`} src={`/${url}`} alt='' />
-                    );
+                    return <ImageLoader src={`/${url}`} />;
                 })}
             </Carousel>
         </div>
