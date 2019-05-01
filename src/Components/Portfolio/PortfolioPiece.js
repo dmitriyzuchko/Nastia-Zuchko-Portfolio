@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ImageLoader from '../LazyLoad/ImageLoader';
+import ImageLoader from '../ImageLoader/ImageLoader';
 
 const PortfolioPiece = props => {
     const link = `/portfolio-piece/${props.name}`;
