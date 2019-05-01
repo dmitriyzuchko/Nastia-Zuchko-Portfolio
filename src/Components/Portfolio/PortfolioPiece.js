@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LazyLoad from 'react-lazy-load';
+import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
-import ImageLoader from './ImageLoader';
+import ImageLoader from '../LazyLoad/ImageLoader';
 
 const PortfolioPiece = props => {
     const link = `/portfolio-piece/${props.name}`;
@@ -20,7 +20,7 @@ const PortfolioPiece = props => {
                 state: { modal: true }
             }}
         >
-            <LazyLoad offsetVertical={500} height={700} debounce={false}>
+            <LazyLoad offset={500} height={700} once>
                 <div className='piece-wrapper'>
                     <ImageLoader src={imgSrc} alt={props.name} />
                     {gallerySize > 1 && (
