@@ -7,7 +7,6 @@ const ImageLoader = props => {
     const [loaded, setLoaded] = useState(_loaded[props.src]);
 
     const onLoad = () => {
-        console.log(`Loaded image: ${props.src}`);
         _loaded[props.src] = true;
         setLoaded(true);
     };
