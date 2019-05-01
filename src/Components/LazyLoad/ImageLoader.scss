@@ -33,6 +33,8 @@
 
 .loading-wrapper {
     background-color: #545454;
+    min-height: 500px;
+    min-width: 500px;
     border-radius: 5px;
     animation: glowingBackground 2s ease-in-out infinite alternate-reverse;
 }
