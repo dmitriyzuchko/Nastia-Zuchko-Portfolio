@@ -4,7 +4,7 @@ import QueryString from 'query-string';
 import { isMobile } from '../../misc/DeviceCheck';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Carousel.scss';
-import ImageLoader from '../LazyLoad/ImageLoader';
+import ImageLoader from '../ImageLoader/ImageLoader';
 
 const PieceDisplay = props => {
     const pieceData = props.pieceData;
