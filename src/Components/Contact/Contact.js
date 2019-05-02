@@ -1,46 +1,22 @@
 import React from 'react';
 import ContactForm from './ContactForm';
 import './Contact.scss';
-// import PersonalPhoto from '../../resources/personal-photo.png';
 
 const Contact = () => (
     <div id='contact-wrapper' className='container'>
         <div id='about-me'>
-            {/* <img id='personal-photo' src={PersonalPhoto} alt='Its me' /> */}
             <h1>About</h1>
             <p>
-                Born in Ukraine on the April of 1996, yet moved to Brooklyn
-                after the age of 4, I grew up with an inclination towards the
-                arts.
+                Hello! I'm an American illustrator based in Brooklyn, NY. I have
+                a BA degree in Illustration from the Fashion Institute of
+                Technology with a minor in Art History.
             </p>
             <p>
-                I had sporadic interactions with art education between the ages
-                of 4-18 and applied to the Fashion Institute of Technology in
-                2014, where I graduated with a BFA in Illustration and a minor
-                in Art History in 2018.
+                I'm a digital artist and I specialize in children's book
+                illustration and character/costume design. My focal interests
+                are on fairy tales, myths, and historical fiction.
             </p>
-            <p>
-                As a child, my favorite pass time was to roam through children's
-                books and live through the illustrations; favoring to determine
-                their meaning through high amounts of speculation. <br />
-                When I drew my own artwork, I wanted the same worldly flair,
-                albeit of the fantastical variety.
-            </p>
-            <p>
-                My dearest and most focal interests are: ancient and medieval
-                history, fairy tales and their retellings, and European
-                mythology, ie Arthurian and Norse.
-            </p>
-            <p>
-                All of which have led me to my current project, a comic called
-                ALBION, written and drawn by myself. An Arthurian retelling that
-                follows the adventures of Merlin in a time before King Arthur.
-            </p>
-            <p>
-                When I'm not working on my comic, I will draw book covers, book
-                illustrations and character design. I favor digital painting and
-                create most of my work through Clip Studio Paint.
-            </p>
+            <p>Feel free to contact me for commissions are inquiries.</p>
         </div>
         <div>
             <ContactForm />
