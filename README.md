@@ -1,3 +1,3 @@
 # Nastia Zuchko Illustration Portfolio
 
-Written in ReactJS.
+Made with ReactJS.
