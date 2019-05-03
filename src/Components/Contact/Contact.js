@@ -16,7 +16,7 @@ const Contact = () => (
                 illustration and character/costume design. My focal interests
                 are on fairy tales, myths, and historical fiction.
             </p>
-            <p>Feel free to contact me for commissions are inquiries.</p>
+            <p>Feel free to contact me for commissions and inquiries.</p>
         </div>
         <div>
             <ContactForm />
