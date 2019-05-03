@@ -50,7 +50,12 @@ const PieceDisplay = props => {
                 selectedItem={+index}
             >
                 {gallery.map((url, index) => {
-                    return <ImageLoader src={`/${url}`} />;
+                    return (
+                        <ImageLoader
+                            key={`slide-image-${index}`}
+                            src={`/${url}`}
+                        />
+                    );
                 })}
             </Carousel>
         </div>
