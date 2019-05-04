@@ -10,26 +10,15 @@ const ContactForm = () => {
     const [validMessage, setValidMessage] = useState(true);
 
     const formIsValid = () => {
-        let formIsValid = true;
+        const nameIsNotEmpty = name !== '';
+        const emailIsNotEmpty = email !== '';
+        const messageIsNotEmpty = message !== '';
 
-        setValidName(true);
-        setValidEmail(true);
-        setValidMessage(true);
+        setValidName(nameIsNotEmpty);
+        setValidEmail(emailIsNotEmpty);
+        setValidMessage(messageIsNotEmpty);
 
-        if (name === '') {
-            setValidName(false);
-            formIsValid = false;
-        }
-        if (email === '') {
-            setValidEmail(false);
-            formIsValid = false;
-        }
-        if (message === '') {
-            setValidMessage(false);
-            formIsValid = false;
-        }
-
-        return formIsValid;
+        return nameIsNotEmpty && emailIsNotEmpty && messageIsNotEmpty;
     };
 
     const handleSubmit = e => {
@@ -57,7 +46,7 @@ const ContactForm = () => {
                 <input
                     type='text'
                     id='form_name'
-                    className={!validName ? 'wrong_input' : null}
+                    className={validName ? '' : 'wrong_input'}
                     placeholder='Name'
                     value={name}
                     onChange={e => setName(e.target.value)}
@@ -65,14 +54,14 @@ const ContactForm = () => {
                 <input
                     type='email'
                     id='form_email'
-                    className={!validEmail ? 'wrong_input' : null}
+                    className={validEmail ? '' : 'wrong_input'}
                     placeholder='Email'
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
                 <textarea
                     id='form_message'
-                    className={!validMessage ? 'wrong_input' : null}
+                    className={validMessage ? '' : 'wrong_input'}
                     placeholder='Message'
                     value={message}
                     onChange={e => setMessage(e.target.value)}
