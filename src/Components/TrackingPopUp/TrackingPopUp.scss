@@ -1,0 +1,56 @@
+@import '../../variables.scss';
+
+$tracking-border-radius: 5px;
+
+.tracking-pop-up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background: $color-accent;
+    color: #000;
+    width: 260px;
+    border-radius: $tracking-border-radius;
+    box-shadow: 5px 5px 10px #000;
+}
+
+.tracking-pop-up p {
+    font-size: 15px;
+    padding: 20px;
+}
+
+.tracking-pop-up button {
+    height: 40px;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.accept-button {
+    border-radius: 0 0 0 $tracking-border-radius;
+}
+
+.reject-button {
+    border-radius: 0 0 $tracking-border-radius 0;
+}
+
+.accept-button:hover,
+.accept-button:active {
+    background-color: #007b00;
+}
+
+.reject-button:hover,
+.reject-button:active {
+    background-color: #a90101;
+}
+
+@media (max-width: 425px) {
+    .tracking-pop-up {
+        bottom: 0px;
+        right: 0px;
+        width: 100vw;
+    }
+}

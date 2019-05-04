@@ -1,13 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import './App.scss';
 import PageDisplay from './Components/PageDisplay';
+import TrackingPopUp from './Components/TrackingPopUp/TrackingPopUp';
+import './App.scss';
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <Route component={PageDisplay} />
-        </BrowserRouter>
+        <>
+            <BrowserRouter>
+                <Route component={PageDisplay} />
+            </BrowserRouter>
+            <TrackingPopUp />
+        </>
     );
 };
 
