@@ -9,32 +9,19 @@ import ImageLoader from '../ImageLoader/ImageLoader';
 const PieceDisplay = props => {
     const pieceData = props.pieceData;
     const gallery = pieceData.urls;
-    const [index, setIndex] = useState(0);
+
+    const urlParams = QueryString.parse(window.location.search);
+    let paramIndex = urlParams.illustration;
+    paramIndex =
+        paramIndex <= gallery.length && paramIndex > 0 ? paramIndex : 1;
+    const [index, setIndex] = useState(paramIndex - 1);
 
     useEffect(() => {
-        const urlParams = QueryString.parse(window.location.search);
-        const paramIndex = urlParams.illustration;
-
-        if (paramIndex && paramIndex !== index) setIndex(paramIndex - 1);
-        else if (!paramIndex) {
-            window.history.replaceState(
-                null,
-                null,
-                window.location.pathname + `?illustration=${index + 1}`
-            );
-        }
-    }, []);
-
-    useEffect(() => {
-        const urlParams = QueryString.parse(window.location.search);
-
-        if (urlParams.illustration !== index + 1) {
-            window.history.replaceState(
-                null,
-                null,
-                window.location.pathname + `?illustration=${index + 1}`
-            );
-        }
+        window.history.replaceState(
+            null,
+            null,
+            window.location.pathname + `?illustration=${index + 1}`
+        );
     }, [index]);
 
     return (
