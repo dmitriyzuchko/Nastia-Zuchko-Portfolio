@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import {
-    acceptTracking,
-    rejectTracking,
-    userAlreadyAsked
-} from './GoogleAnalytics';
+import GAManager from './GAManager';
 import './TrackingPopUp.scss';
 
-const TrackingPopUp = () => {
-    const [shouldRender, setShouldRender] = useState(!userAlreadyAsked());
+const TrackingPopUp = props => {
+    const gaManager = new GAManager(props.trackingID);
+    const userAlreadyAsked = gaManager.userAlreadyAsked();
+    const [shouldRender, setShouldRender] = useState(!userAlreadyAsked);
 
     const handleAccept = () => {
-        acceptTracking();
+        gaManager.acceptTracking();
         setShouldRender(false);
     };
 
     const handleReject = () => {
-        rejectTracking();
+        gaManager.rejectTracking();
         setShouldRender(false);
     };
 

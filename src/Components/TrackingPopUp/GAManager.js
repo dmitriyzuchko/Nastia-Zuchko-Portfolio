@@ -1,5 +1,3 @@
-const trackingCookieName = 'canTrack';
-
 const setCookie = (name, value, days = 30) => {
     let expires = '';
 
@@ -24,13 +22,13 @@ const getCookieValue = name => {
     return foundCookie;
 };
 
-const loadGoogleAnalytics = () => {
+const loadGoogleAnalytics = trackingID => {
     // Doesn't run tracking while in dev
     if (window.location.hostname === 'localhost') return;
 
     const script = document.createElement('script');
 
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-139426465-1';
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingID}`;
     script.async = true;
     document.body.appendChild(script);
 
@@ -41,23 +39,39 @@ const loadGoogleAnalytics = () => {
     }
 
     gtag('js', new Date());
-    gtag('config', 'UA-139426465-1');
+    gtag('config', trackingID);
 };
 
-export const acceptTracking = () => {
-    setCookie(trackingCookieName, true, 356);
-    loadGoogleAnalytics();
-};
+class GAManager {
+    trackingCookieName = 'canTrack';
 
-export const rejectTracking = () => {
-    setCookie(trackingCookieName, false);
-};
+    constructor(trackingID) {
+        this.trackingID = trackingID;
+    }
 
-export const userAlreadyAsked = () => {
-    const cookieValue = getCookieValue(trackingCookieName);
+    acceptTracking = () => {
+        setCookie(this.trackingCookieName, true, 356);
+        loadGoogleAnalytics(GAManager.trackingID);
+    };
 
-    if (cookieValue === null) return false;
-    if (cookieValue) loadGoogleAnalytics();
+    rejectTracking = () => {
+        setCookie(this.trackingCookieName, false);
+    };
 
-    return true;
-};
+    userAlreadyAsked() {
+        const cookieValue = getCookieValue(this.trackingCookieName);
+
+        if (cookieValue === null) return false;
+        if (!this.trackingID) {
+            console.log(
+                `Set tracking ID for Google Analytics with GAManager.setID(id)`
+            );
+            return true;
+        }
+        if (cookieValue) loadGoogleAnalytics(this.trackingID);
+
+        return true;
+    }
+}
+
+export default GAManager;

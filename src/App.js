@@ -10,7 +10,7 @@ const App = () => {
             <BrowserRouter>
                 <Route component={PageDisplay} />
             </BrowserRouter>
-            <TrackingPopUp />
+            <TrackingPopUp trackingID='UA-139426465-1' />
         </>
     );
 };
