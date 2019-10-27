@@ -11,6 +11,11 @@ const PieceDisplay = props => {
     const gallery = pieceData.urls;
     const [index, setIndex] = useState(0);
 
+    const carouselRef = React.createRef();
+    const handleTouch = e => {
+        console.log(e);
+    };
+
     useEffect(() => {
         const urlParams = QueryString.parse(window.location.search);
         const paramIndex = urlParams.illustration;
@@ -23,6 +28,13 @@ const PieceDisplay = props => {
                 window.location.pathname + `?illustration=${index + 1}`
             );
         }
+
+        if (carouselRef.current) {
+            console.log(carouselRef.current);
+            carouselRef.current.onSwipeMove(handleTouch);
+        }
+
+        return () => carouselRef.removeEventListener('touchmove', handleTouch);
     }, []);
 
     useEffect(() => {
@@ -48,6 +60,7 @@ const PieceDisplay = props => {
                 showIndicators={gallery.length > 1}
                 onChange={newIndex => setIndex(newIndex)}
                 selectedItem={+index}
+                ref={carouselRef}
             >
                 {gallery.map((url, index) => {
                     return (
