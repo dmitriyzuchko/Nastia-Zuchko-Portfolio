@@ -31,7 +31,7 @@ const SiteHead = () => {
                             <i className='fas fa-shopping-bag' />
                             <a
                                 className='shop-link'
-                                href='https://society6.com/nastyazuchko'
+                                href='https://society6.com/nastiazuchko'
                             >
                                 Merch
                             </a>
