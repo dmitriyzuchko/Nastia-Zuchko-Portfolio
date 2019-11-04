@@ -39,10 +39,6 @@ const SiteHead = () => {
                     </div>
                     <div id='external-links'>
                         <SocialLink
-                            socialNetwork='wordpress'
-                            username='nastiazuchko'
-                        />
-                        <SocialLink
                             socialNetwork='twitter'
                             username='nastiazuchko'
                         />
