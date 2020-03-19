@@ -1,172 +1,170 @@
 @import '../../variables.scss';
 
 #contact-wrapper {
-    display: flex;
-    margin-top: 30px;
-    flex-grow: 1;
+  display: flex;
+  margin-top: 30px;
+  flex-grow: 1;
 
-    div {
-        flex: 1;
-    }
+  div {
+    flex: 1;
+  }
 
-    h1 {
-        font-weight: 200;
-    }
+  h1 {
+    font-weight: 200;
+  }
 }
 
 #about-me {
-    width: 70%;
-    padding: 5% 5% 0% 5%;
-    font-size: 12pt;
-    display: flex;
-    flex-flow: column;
-    color: #fff;
-    flex: 1.05;
+  width: 70%;
+  padding: 5% 5% 0% 5%;
+  font-size: 12pt;
+  display: flex;
+  flex-flow: column;
+  color: #fff;
+  flex: 1.05;
 
-    #personal-photo {
-        margin: auto;
-        margin-top: 56px;
-        margin-bottom: 25px;
-        width: 90%;
-    }
+  #personal-photo {
+    margin: auto;
+    margin-top: 56px;
+    margin-bottom: 25px;
+    width: 90%;
+  }
 
-    h1 {
-        display: none;
-    }
+  h1 {
+    display: none;
+  }
 
-    p {
-        margin: 10px auto;
-    }
+  p {
+    margin: 10px auto;
+  }
 }
 
 #contact-form {
-    width: 70%;
-    max-width: 70%;
-    margin: 0px auto;
+  margin: 0px auto;
 
-    h1 {
-        text-align: center;
-        margin: 0;
-        margin-bottom: 0.25em;
-        color: #fff;
+  h1 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0.25em;
+    color: #fff;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input {
+    margin-bottom: 20px;
+    height: 50px;
+  }
+
+  textarea {
+    min-height: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+
+  input,
+  textarea {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    font-size: 25px;
+    font-family: $main-font;
+    border-radius: 3px;
+    border: 0px;
+    resize: none;
+    line-height: normal;
+    padding: 0px;
+  }
+
+  .wrong_input {
+    border: 1px #ff0000 solid;
+    background: #ffcece;
+  }
+
+  #button-wrapper {
+    text-align: center;
+
+    button {
+      position: relative;
+      z-index: 1;
+      height: 60px;
+      width: 100%;
+      font-size: 30px;
+      background: $color-accent;
+      border-radius: 3px;
+      border: #fff;
+      color: #fff;
+      padding: 5px 15px;
+      text-align: center;
+      overflow: hidden;
+      transition: color 0.25s ease-in-out;
     }
 
-    form {
-        width: 100%;
+    button:hover {
+      color: $color-accent;
+      cursor: pointer;
     }
 
-    input {
-        margin-bottom: 20px;
-        height: 50px;
+    button::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      background-color: #fff;
+      transform-origin: center;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.25s ease-in-out;
     }
 
-    textarea {
-        min-height: 300px;
-        height: 300px;
-        margin-bottom: 10px;
+    button:hover::before {
+      transform: translate(-50%, -50%) scale(15);
     }
-
-    input,
-    textarea {
-        min-width: 100%;
-        max-width: 100%;
-        width: 100%;
-        font-size: 30px;
-        font-family: $main-font;
-        border-radius: 3px;
-        border: 0px;
-        resize: none;
-        line-height: normal;
-        padding: 0px;
-    }
-
-    .wrong_input {
-        border: 1px #ff0000 solid;
-        background: #ffcece;
-    }
-
-    #button-wrapper {
-        text-align: center;
-
-        button {
-            position: relative;
-            z-index: 1;
-            height: 60px;
-            width: 100%;
-            font-size: 30px;
-            background: $color-accent;
-            border-radius: 3px;
-            border: #fff;
-            color: #fff;
-            padding: 5px 15px;
-            text-align: center;
-            overflow: hidden;
-            transition: color 0.25s ease-in-out;
-        }
-
-        button:hover {
-            color: $color-accent;
-            cursor: pointer;
-        }
-
-        button::before {
-            content: '';
-            z-index: -1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 2em;
-            height: 2em;
-            border-radius: 50%;
-            background-color: #fff;
-            transform-origin: center;
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.25s ease-in-out;
-        }
-
-        button:hover::before {
-            transform: translate(-50%, -50%) scale(15);
-        }
-    }
+  }
 }
 
 #email-label {
-    width: 70%;
-    margin: auto;
-    margin-top: 10px;
+  width: 70%;
+  margin: auto;
+  margin-top: 10px;
+  color: #fff;
+
+  a {
+    margin-left: 10px;
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
     color: #fff;
-
-    a {
-        margin-left: 10px;
-    }
-
-    a,
-    a:visited,
-    a:hover,
-    a:active {
-        color: #fff;
-    }
+  }
 }
 
 @media (max-width: 1000px) {
-    #contact-wrapper {
-        flex-direction: column-reverse;
-    }
+  #contact-wrapper {
+    flex-direction: column-reverse;
+  }
 
-    #about-me {
-        margin: auto;
-        width: 90%;
-    }
+  #about-me {
+    margin: auto;
+    width: 90%;
+  }
 
-    #contact-form,
-    #email-label {
-        width: 80%;
-        max-width: 80%;
-    }
+  #contact-form,
+  #email-label {
+    width: 80%;
+    max-width: 80%;
+  }
 
-    #about-me h1 {
-        display: flex;
-        margin: auto;
-        margin-top: 20px;
-    }
+  #about-me h1 {
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+  }
 }
