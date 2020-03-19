@@ -1,106 +1,101 @@
 @import '../../variables.scss';
 
 #portfolio-display {
-    padding-top: 25px;
-    text-align: center;
+  padding-top: 25px;
+  text-align: center;
 }
 
 .portfolio-row {
-    display: flex;
-    margin-bottom: 30px;
+  display: flex;
+  margin-bottom: 30px;
 
-    .one-column {
-        width: 100%;
+  .one-column {
+    width: 100%;
 
-        img {
-            max-width: 100%;
-            max-height: 700px;
-        }
+    img {
+      max-width: 100%;
+      max-height: 700px;
     }
+  }
 
-    .two-column {
-        width: 50%;
-
-        .piece-wrapper {
-            width: 95%;
-        }
-
-        img {
-            width: 100%;
-        }
-    }
+  .two-column {
+    width: 50%;
 
     .piece-wrapper {
-        position: relative;
+      width: 95%;
     }
 
-    .one-column div {
-        margin: auto;
+    img {
+      width: 100%;
     }
+  }
 
-    .two-column:nth-child(1) div {
-        margin-left: 0px;
-        margin-right: auto;
-    }
+  .piece-wrapper {
+    position: relative;
+  }
 
-    .two-column:nth-child(2) div {
-        margin-right: 0px;
-        margin-left: auto;
-    }
+  .one-column div {
+    margin: auto;
+  }
+
+  .two-column:nth-child(1) div {
+    margin-left: 0px;
+    margin-right: auto;
+  }
+
+  .two-column:nth-child(2) div {
+    margin-right: 0px;
+    margin-left: auto;
+  }
 }
 
 .portfolio-piece {
-    position: relative;
-    display: flex;
-    align-items: baseline;
-    margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  margin: 0 auto;
 }
 
 .gallery-size-indicator {
-    $dimension: 30px;
-    $position: 10px;
-    position: absolute;
-    top: $position;
-    right: $position;
-    width: $dimension;
-    height: $dimension;
-    font-size: 17px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background: $color-accent;
-    background: linear-gradient(
-        320deg,
-        rgba(179, 122, 12, 1) 0%,
-        rgba(219, 149, 11, 1) 100%
-    );
+  $dimension: 30px;
+  $position: 10px;
+  position: absolute;
+  top: $position;
+  right: $position;
+  width: $dimension;
+  height: $dimension;
+  font-size: 17px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: $color-accent;
 }
 
 @media (min-width: 900px) {
-    #portfolio-display .container {
-        width: 900px;
-    }
+  #portfolio-display .container {
+    width: 900px;
+  }
 }
 
 @media (max-width: 425px) {
-    .portfolio-row {
-        flex-direction: column;
-        margin-bottom: auto;
+  .portfolio-row {
+    flex-direction: column;
+    margin-bottom: auto;
 
-        .one-column {
-            width: 95%;
-            margin: auto;
-        }
-
-        .two-column {
-            width: auto;
-        }
-
-        .two-column:nth-child(1) div,
-        .two-column:nth-child(2) div {
-            margin: auto;
-        }
+    .one-column {
+      width: 95%;
+      margin: auto;
     }
+
+    .two-column {
+      width: auto;
+    }
+
+    .two-column:nth-child(1) div,
+    .two-column:nth-child(2) div {
+      margin: auto;
+    }
+  }
 }

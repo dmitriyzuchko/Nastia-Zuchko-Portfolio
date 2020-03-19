@@ -3,170 +3,171 @@
 $header-height: 150px;
 
 header {
-    display: flex;
-    height: $header-height;
-    min-height: $header-height;
-    padding-top: 10px;
-    margin-bottom: 40px;
-    width: 100%;
-    font-weight: 400;
+  display: flex;
+  height: $header-height;
+  min-height: $header-height;
+  padding-top: 10px;
+  margin-bottom: 40px;
+  width: 100%;
+  font-weight: 400;
 }
 
 header .container {
-    display: flex;
+  display: flex;
 }
 
 #site-logo-wrapper {
-    display: flex;
+  display: flex;
 }
 
 #site-logo {
-    align-self: center;
-    height: 100%;
-    flex-basis: 150px;
-    margin-top: 20px;
-    margin-left: 20px;
+  align-self: center;
+  height: 100%;
+  max-width: 250px;
+  flex-basis: 150px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 nav {
-    display: inline-flex;
-    margin: auto;
-    margin-right: 50px;
-    font-size: 27px;
+  display: inline-flex;
+  margin: auto;
+  margin-right: 50px;
+  font-size: 27px;
 }
 
 #internal-links {
-    display: flex;
-    margin-right: 10px;
+  display: flex;
+  margin-right: 10px;
 
-    .internal-link {
-        margin: auto 10px;
-    }
+  .internal-link {
+    margin: auto 10px;
+  }
 
-    a,
-    a:visited {
-        text-decoration: none;
-        color: #fff;
-    }
+  a,
+  a:visited {
+    text-decoration: none;
+    color: #fff;
+  }
 
-    a:hover,
-    a:active {
-        color: $color-accent;
-    }
+  a:hover,
+  a:active {
+    color: $color-accent;
+  }
 }
 
 #external-links {
-    display: flex;
+  display: flex;
 
-    .social-network-link {
-        margin: auto 8px;
-    }
+  .social-network-link {
+    margin: auto 8px;
+  }
 
-    a,
-    a:visited {
-        color: #fff;
-    }
+  a,
+  a:visited {
+    color: #fff;
+  }
 
-    a:hover,
-    a:active {
-        color: $color-accent;
-    }
+  a:hover,
+  a:active {
+    color: $color-accent;
+  }
 }
 
 #shop-links-wrapper {
-    color: #fff;
-    position: relative;
+  color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+
+  #shop-links {
+    background: $color-accent;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 0px 10px;
     display: flex;
     align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    margin: 5px;
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: underline;
+  }
+
+  a:nth-child(1) {
     margin-right: 10px;
+  }
 
-    #shop-links {
-        background: $color-accent;
-        border-radius: 30px;
-        font-size: 20px;
-        padding: 0px 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    a {
-        text-decoration: none;
-        color: #fff;
-        margin: 5px;
-    }
-
-    a:hover,
-    a:active {
-        text-decoration: underline;
-    }
-
-    a:nth-child(1) {
-        margin-right: 10px;
-    }
-
-    a:nth-child(3) {
-        margin-left: 10px;
-    }
+  a:nth-child(3) {
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 600px) {
-    header {
-        height: auto;
-        margin-bottom: auto;
-    }
+  header {
+    height: auto;
+    margin-bottom: auto;
+  }
 
-    header .container {
-        flex-direction: column;
-    }
+  header .container {
+    flex-direction: column;
+  }
 
-    #site-logo {
-        margin: auto;
-        margin-bottom: 20px;
-        width: 85vw;
-    }
+  #site-logo {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 85vw;
+  }
 
-    nav {
-        margin-right: auto;
-        flex-direction: column;
-    }
+  nav {
+    margin-right: auto;
+    flex-direction: column;
+  }
 
-    #internal-links {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
+  #internal-links {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 
-    #shop-links-wrapper {
-        justify-content: center;
-        margin-right: 0px;
-        margin-bottom: 20px;
-    }
+  #shop-links-wrapper {
+    justify-content: center;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
 
-    #external-links {
-        justify-content: space-between;
-        margin: auto;
-    }
+  #external-links {
+    justify-content: space-between;
+    margin: auto;
+  }
 }
 
 @media (max-width: 900px) {
-    header .container {
-        flex-direction: column;
-        align-items: center;
-    }
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    header {
-        height: auto;
-        margin-bottom: auto;
-    }
+  header {
+    height: auto;
+    margin-bottom: auto;
+  }
 
-    #site-logo {
-        height: auto;
-        margin: auto;
-        margin-bottom: 20px;
-        width: 85vw;
-    }
+  #site-logo {
+    height: auto;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 85vw;
+  }
 
-    nav {
-        margin: 0px;
-        margin-top: 20px;
-    }
+  nav {
+    margin: 0px;
+    margin-top: 20px;
+  }
 }
