@@ -10,6 +10,7 @@ body,
 html {
   min-height: 100%;
   position: relative;
+  color: $color-secondary;
 }
 
 html {
@@ -42,7 +43,6 @@ body {
 footer {
   display: flex;
   min-height: $footer-height;
-  color: #fff;
 
   p {
     margin-top: 10px;
@@ -55,7 +55,6 @@ footer {
 
 .no-match * {
   text-align: center;
-  color: #fff;
 }
 
 .no-match h1 {
