@@ -15,7 +15,7 @@ const SocialLink = ({ username, socialNetwork }) => {
       svg = <TwitterIcon />;
       break;
     case 'tumblr':
-      socialNetworkUrl += 'https://{x}.tumbrl.com';
+      socialNetworkUrl += 'https://{x}.tumblr.com';
       svg = <TumblrIcon />;
       break;
     case 'instagram':
