@@ -1,35 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SocialLink = props => {
-  let socialNetworkUrl = '';
-  let className = 'fab ';
+import { ReactComponent as TwitterIcon } from './../resources/icons/twitter.svg';
+import { ReactComponent as TumblrIcon } from './../resources/icons/tumblr.svg';
+import { ReactComponent as InstagramIcon } from './../resources/icons/instagram.svg';
 
-  switch (props.socialNetwork) {
+const SocialLink = ({ username, socialNetwork }) => {
+  let socialNetworkUrl = '';
+  let svg;
+
+  switch (socialNetwork) {
     case 'twitter':
       socialNetworkUrl += 'https://twitter.com/{x}';
-      className += 'fa-twitter';
+      svg = <TwitterIcon />;
       break;
     case 'tumblr':
       socialNetworkUrl += 'https://{x}.tumbrl.com';
-      className += 'fa-tumblr';
+      svg = <TumblrIcon />;
       break;
     case 'instagram':
       socialNetworkUrl += 'https://instagram.com/{x}';
-      className += 'fa-instagram';
-      break;
-    case 'wordpress':
-      socialNetworkUrl += 'https://{x}.wordpress.com';
-      className += 'fa-wordpress';
+      svg = <InstagramIcon />;
       break;
     default:
   }
 
-  socialNetworkUrl = socialNetworkUrl.replace('{x}', props.username);
+  socialNetworkUrl = socialNetworkUrl.replace('{x}', username);
 
   return (
-    <a href={socialNetworkUrl} className='social-network-link'>
-      <i className={className} />
+    <a href={socialNetworkUrl} className='social-network-link' target='_blank'>
+      {svg}
     </a>
   );
 };

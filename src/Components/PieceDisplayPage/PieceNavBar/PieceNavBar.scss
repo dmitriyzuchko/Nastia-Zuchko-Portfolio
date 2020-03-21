@@ -1,54 +1,53 @@
 @import '../../../variables.scss';
 
 #piece-nav-bar {
-    display: flex;
-    height: $piece-display-nav-height;
-    padding: 10px;
+  display: flex;
+  height: $piece-display-nav-height;
+  padding: 10px;
 
-    .home-button,
-    #nav-title,
-    i {
-        margin: auto;
-    }
+  .home-button,
+  #nav-title,
+  i {
+    margin: auto;
+  }
 
-    .home-button {
-        margin-left: 10px;
-    }
+  .home-button {
+    margin-left: 10px;
+  }
 
-    .fa-arrow-left,
-    .fa-arrow-right {
-        margin-right: 10px;
-    }
+  .fa-arrow-left,
+  .fa-arrow-right {
+    margin-right: 10px;
+  }
 
-    button {
-        text-decoration: none;
-        cursor: pointer;
-        background: none;
-        border: none;
-        font-size: 20pt;
-        outline: none;
-        padding: 0px;
-        font-family: $main-font;
-    }
+  button {
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20pt;
+    outline: none;
+    padding: 0px;
+  }
 
-    button,
-    button:visited {
-        color: $color-accent;
-    }
+  button,
+  button:visited {
+    color: $color-accent;
+  }
 
-    button:hover,
-    button:active {
-        color: #fff;
-    }
+  button:hover,
+  button:active {
+    color: #fff;
+  }
 }
 
 #nav-title {
-    text-align: center;
-    flex-grow: 1;
+  text-align: center;
+  flex-grow: 1;
 }
 
 @media (max-width: 900px) {
-    #piece-nav-bar .home-button {
-        margin: 0;
-    }
+  #piece-nav-bar .home-button {
+    margin: 0;
+  }
 }

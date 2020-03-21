@@ -1,13 +1,10 @@
 @import '../../variables.scss';
 
 #contact-wrapper {
+  width: 500px;
   display: flex;
-  margin-top: 30px;
-  flex-grow: 1;
-
-  div {
-    flex: 1;
-  }
+  flex-direction: column;
+  margin-top: 100px;
 
   h1 {
     font-weight: 200;
@@ -15,8 +12,6 @@
 }
 
 #about-me {
-  width: 70%;
-  padding: 5% 5% 0% 5%;
   font-size: 12pt;
   display: flex;
   flex-flow: column;
@@ -35,7 +30,7 @@
   }
 
   p {
-    margin: 10px auto;
+    margin-bottom: 1em;
   }
 }
 
@@ -70,7 +65,6 @@
     max-width: 100%;
     width: 100%;
     font-size: 25px;
-    font-family: $main-font;
     border-radius: 3px;
     border: 0px;
     resize: none;
@@ -130,7 +124,6 @@
 
 #email-label {
   width: 70%;
-  margin: auto;
   margin-top: 10px;
   color: #fff;
 

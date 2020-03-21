@@ -1,5 +1,6 @@
 // $color-accent: #cd630a;
-$color-accent: #ab1c2e;
+$color-accent: #ea233b;
+$color-secondary: #fff;
 $color-background: #062735;
 
 $accent-bar-height: 10px;
@@ -9,4 +10,5 @@ $piece-display-height: calc(
   100vh - #{$footer-height} - #{$accent-bar-height} - #{$piece-display-nav-height}
 );
 
-$main-font: 'Kanit', sans-serif;
+$title-font: 'Archivo Black', sans-serif;
+$body-font: 'Roboto', sans-serif;

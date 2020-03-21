@@ -3,6 +3,7 @@
 #portfolio-display {
   padding-top: 25px;
   text-align: center;
+  justify-self: flex-start;
 }
 
 .portfolio-row {
@@ -75,7 +76,7 @@
 
 @media (min-width: 900px) {
   #portfolio-display .container {
-    width: 900px;
+    width: 700px;
   }
 }
 

@@ -13,22 +13,30 @@ html {
 }
 
 html {
-  font-family: $main-font;
-  border-top: solid $accent-bar-height $color-accent;
+  font-family: $body-font;
 }
 
 body {
   background: $color-background;
 }
 
-.container {
-  margin: 0 auto;
-  flex-shrink: 0;
+.top-bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: $accent-bar-height;
+  width: 100%;
+  background: $color-accent;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
+.scrollbar-jitter-fix {
+  margin-left: calc(100vw - 100%);
+}
+
+.container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 250px auto;
 }
 
 footer {
@@ -37,7 +45,7 @@ footer {
   color: #fff;
 
   p {
-    margin: auto;
+    margin-top: 10px;
   }
 }
 
@@ -69,7 +77,7 @@ footer {
 
 @media (min-width: 425px) {
   #root {
-    min-height: 100vh;
+    min-height: calc(100vh - $accent-bar-height);
   }
 }
 
