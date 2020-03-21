@@ -35,6 +35,7 @@ const SiteHead = () => {
           className='sidebar-link'
           href='https://www.inprnt.com/gallery/nastiazuchko/'
           target='_blank'
+          rel='noopener noreferrer'
         >
           <PrintsSVG className='nav-svg' />
           PRINTS
@@ -42,7 +43,8 @@ const SiteHead = () => {
         <a
           className='sidebar-link'
           href='https://society6.com/nastiazuchko'
-          target='blank'
+          target='_blank'
+          rel='noopener noreferrer'
         >
           <MerchSVG className='nav-svg' />
           MERCH

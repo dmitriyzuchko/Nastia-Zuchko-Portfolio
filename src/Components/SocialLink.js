@@ -28,7 +28,12 @@ const SocialLink = ({ username, socialNetwork }) => {
   socialNetworkUrl = socialNetworkUrl.replace('{x}', username);
 
   return (
-    <a href={socialNetworkUrl} className='social-network-link' target='_blank'>
+    <a
+      href={socialNetworkUrl}
+      className='social-network-link'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       {svg}
     </a>
   );
