@@ -67,8 +67,8 @@
 
 @media (max-width: 425px) {
   #portfolio-display {
+    grid-template-columns: 1fr;
     gap: 10px;
-    column-gap: 0px;
   }
 
   .one-column,
