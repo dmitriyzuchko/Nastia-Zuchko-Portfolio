@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import SiteHead from './SiteHead/SiteHead';
 import PortfolioDisplay from './Portfolio/PortfolioDisplay';
 import Contact from './Contact/Contact';
 import NoMatch from './NoMatch';
 import PieceDisplayPage from './PieceDisplayPage/PieceDisplayPage';
+
+import ProfileContextWrap from './PortfolioContextWrap';
+
 import { isiOS } from '../misc/DeviceCheck';
 import { enableScroll, disableScroll } from '../misc/ToggleScroll';
 
-const PageDisplay = props => {
-  const [previousLocation, setPreviousLocation] = useState(props.location);
-  const { location } = props;
+const PageDisplay = ({ location, history }) => {
+  const [previousLocation, setPreviousLocation] = useState(location);
 
-  useEffect(() => {
-    const originatesFromPortfolio =
-      props.history.action !== 'POP' &&
-      (!location.state || !location.state.modal);
+  useEffect(
+    () => {
+      const originatesFromPortfolio =
+        history.action !== 'POP' && (!location.state || !location.state.modal);
 
-    if (originatesFromPortfolio) {
-      setPreviousLocation(location);
-    }
-  }, [location.pathname]);
+      if (originatesFromPortfolio) {
+        setPreviousLocation(location);
+      }
+    },
+    [location.pathname]
+  );
 
   const isModal = !!(
     location.state &&
@@ -34,8 +39,8 @@ const PageDisplay = props => {
   lockBodyScroll(isModal);
 
   return (
-    <>
-      <div className='top-bar'></div>
+    <ProfileContextWrap>
+      <div className='top-bar' />
       <div className='scrollbar-jitter-fix'>
         <div className='container'>
           {(isNotPortfolioPiece || isModal) && <SiteHead />}
@@ -51,14 +56,16 @@ const PageDisplay = props => {
       {isModal && (
         <Route
           path='/portfolio-piece/:name'
-          render={routerProps => <PieceDisplayPage isModal {...routerProps} />}
+          render={(routerProps) => (
+            <PieceDisplayPage isModal {...routerProps} />
+          )}
         />
       )}
-    </>
+    </ProfileContextWrap>
   );
 };
 
-const lockBodyScroll = shouldLock => {
+const lockBodyScroll = (shouldLock) => {
   if (shouldLock) {
     disableScroll();
   } else {
