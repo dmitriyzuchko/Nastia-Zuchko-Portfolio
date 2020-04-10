@@ -1,6 +1,6 @@
 # Bardicious Portfolio
 
-Made with ReactJS. Backend CMS service provided by [prismic.io](prismic.io)
+Made with ReactJS. Backend CMS service provided by [prismic.io](https://www.prismic.io)
 
 Fonts used:<br>
 [Archivo Black](https://fonts.google.com/specimen/Archivo+Black)</br>
