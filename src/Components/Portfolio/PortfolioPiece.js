@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ImageLoader from '../ImageLoader/ImageLoader';
 
-const PortfolioPiece = (props) => {
+const PortfolioPiece = props => {
   const link = `/portfolio-piece/${props.name}`;
   const gallerySize = props.gallerySize;
   let wrapperClasses = 'portfolio-piece ';
@@ -19,10 +19,10 @@ const PortfolioPiece = (props) => {
       className={wrapperClasses}
       to={{
         pathname: link,
-        state: { modal: true },
+        state: { modal: true }
       }}
     >
-      <div className='piece-wrapper'>
+      <div className={`piece-wrapper ${props.className}`}>
         <ImageLoader src={props.src} alt={props.name} />
         {gallerySize > 1 && (
           <div className='gallery-size-indicator'>
@@ -37,7 +37,7 @@ const PortfolioPiece = (props) => {
 PortfolioPiece.propTypes = {
   src: PropTypes.string.isRequired,
   widthType: PropTypes.string.isRequired,
-  gallerySize: PropTypes.number,
+  gallerySize: PropTypes.number
 };
 
 export default PortfolioPiece;

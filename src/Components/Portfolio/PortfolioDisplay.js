@@ -8,39 +8,32 @@ import './Portfolio.scss';
 const PortfolioDisplay = () => {
   const { portfolio } = useContext(PortfolioContext);
 
-  const portfolioComponents = portfolio.map((piece) => {
+  let halfPieces = 0;
+
+  const portfolioComponents = portfolio.map(piece => {
+    let className = 'center-align';
+
+    if (piece.widthType === 'Half') {
+      halfPieces += 1;
+
+      if (halfPieces % 2 === 0) {
+        className = 'right-align';
+      } else {
+        className = 'left-align';
+      }
+    }
+
     return (
       <PortfolioPiece
         key={piece.uid}
         src={piece.images[0]}
         name={piece.uid}
+        className={className}
         widthType={piece.widthType}
         gallerySize={piece.images.length}
       />
     );
   });
-  // let portfolioPieces = PortfolioData.map((row, index) => {
-  //   const itemAmount = row.items.length;
-  //   let pieces = [];
-
-  //   row.items.forEach(piece => {
-  //     const firstImage = piece.urls[0];
-
-  //     const portfolioElement = (
-  //       <PortfolioPiece
-  //         key={piece.name}
-  //         imageSrc={firstImage}
-  //         name={piece.name}
-  //         sharesSpaceInRow={itemAmount > 1}
-  //         gallerySize={piece.urls.length}
-  //       />
-  //     );
-
-  //     pieces.push(portfolioElement);
-  //   });
-
-  //   return <PortfolioRow key={`row-${index}`} pieces={pieces} />;
-  // });
 
   return <div id='portfolio-display'>{portfolioComponents}</div>;
 };
