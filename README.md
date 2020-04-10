@@ -1,6 +1,6 @@
-# Nastia Zuchko Illustration Portfolio
+# Bardicious Portfolio
 
-Made with ReactJS.
+Made with ReactJS. Backend CMS service provided by [prismic.io](prismic.io)
 
 Fonts used:
 [Archivo Black](https://fonts.google.com/specimen/Archivo+Black)</br>
