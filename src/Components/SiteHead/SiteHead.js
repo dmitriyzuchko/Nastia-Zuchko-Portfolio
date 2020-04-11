@@ -25,14 +25,14 @@ const SiteHead = () => {
       </Link>
       <h1>BARDICIOUS</h1>
       <button className='nav-display-button' onClick={toggleMenu}>
-        <i className='fas fa-bars'></i>
+        <i className='fas fa-bars' />
       </button>
       <div id='social-network-links'>
         <SocialLink socialNetwork='twitter' username='bardicious' />
         <SocialLink socialNetwork='instagram' username='bardicious' />
         <SocialLink socialNetwork='tumblr' username='bardicious' />
       </div>
-      <nav>
+      <nav onClick={toggleMenu}>
         <NavLink className='sidebar-link' exact to='/'>
           <PortfolioSVG className='nav-svg' />
           PORTFOLIO
