@@ -12,12 +12,21 @@ import { ReactComponent as MerchSVG } from '../../resources/icons/merch.svg';
 import './SiteHead.scss';
 
 const SiteHead = () => {
+  const headerRef = React.createRef();
+
+  const toggleMenu = () => {
+    headerRef.current.classList.toggle('responsive');
+  };
+
   return (
-    <header>
+    <header ref={headerRef}>
       <Link id='site-logo-wrapper' to='/'>
         <img id='site-logo' src={HeaderLogo} alt='Website logo' />
       </Link>
       <h1>BARDICIOUS</h1>
+      <button className='nav-display-button' onClick={toggleMenu}>
+        <i className='fas fa-bars'></i>
+      </button>
       <div id='social-network-links'>
         <SocialLink socialNetwork='twitter' username='bardicious' />
         <SocialLink socialNetwork='instagram' username='bardicious' />

@@ -53,7 +53,11 @@ $section-width: 500px;
   width: $section-width;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1099px) {
+  .about-me-wrapper {
+    margin-top: 0px;
+  }
+
   #about-me {
     margin: auto;
     width: 90%;
@@ -65,7 +69,6 @@ $section-width: 500px;
 
   .about-me-wrapper {
     width: $mobile-section-width;
-    margin-top: 0px;
   }
 
   .processes .process img {

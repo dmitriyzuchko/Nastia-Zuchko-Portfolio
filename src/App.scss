@@ -75,6 +75,11 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0px;
+  }
+
+  .scrollbar-jitter-fix {
+    margin-left: 0px;
   }
 }
 
@@ -84,7 +89,7 @@ footer {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 414px) {
   .no-match {
     display: flex;
     align-items: center;
