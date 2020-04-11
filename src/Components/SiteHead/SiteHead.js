@@ -5,6 +5,7 @@ import Footer from './../Footer';
 
 import HeaderLogo from '../../resources/logo.svg';
 import { ReactComponent as PortfolioSVG } from '../../resources/icons/portfolio.svg';
+import { ReactComponent as AboutSVG } from '../../resources/icons/about.svg';
 import { ReactComponent as ContactSVG } from '../../resources/icons/contact.svg';
 import { ReactComponent as PrintsSVG } from '../../resources/icons/prints.svg';
 import { ReactComponent as MerchSVG } from '../../resources/icons/merch.svg';
@@ -26,6 +27,10 @@ const SiteHead = () => {
         <NavLink className='sidebar-link' exact to='/'>
           <PortfolioSVG className='nav-svg' />
           PORTFOLIO
+        </NavLink>
+        <NavLink className='sidebar-link' to='/about'>
+          <AboutSVG className='nav-svg' />
+          ABOUT
         </NavLink>
         <NavLink className='sidebar-link' to='/contact'>
           <ContactSVG className='nav-svg' />

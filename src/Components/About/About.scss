@@ -1,0 +1,83 @@
+@import '../../variables.scss';
+
+$section-width: 500px;
+
+.about-me-wrapper {
+  width: $section-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 110px;
+  margin-bottom: 50px;
+
+  h1 {
+    text-align: center;
+    font-size: 18px;
+    color: $color-accent;
+  }
+}
+
+#about-me {
+  font-size: 12pt;
+  display: flex;
+  flex-flow: column;
+  flex: 1.05;
+
+  h1 {
+    text-align: left;
+  }
+
+  #personal-photo {
+    margin: auto;
+    margin-top: 56px;
+    margin-bottom: 25px;
+    width: 90%;
+  }
+}
+
+.processes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin-top: 2em;
+
+  .process {
+    margin: auto;
+
+    img {
+      width: calc(#{$section-width} / 3 - 5px);
+    }
+  }
+}
+
+.bottom-image-wrapper img {
+  width: $section-width;
+}
+
+@media (max-width: 1100px) {
+  #about-me {
+    margin: auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 414px) {
+  $mobile-section-width: 95%;
+
+  .about-me-wrapper {
+    width: $mobile-section-width;
+    margin-top: 0px;
+  }
+
+  .processes .process img {
+    width: 95%;
+  }
+
+  .bottom-image-wrapper img {
+    width: $mobile-section-width;
+  }
+
+  .attributes {
+    width: 95%;
+    margin: auto;
+  }
+}
