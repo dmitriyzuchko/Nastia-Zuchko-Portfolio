@@ -81,9 +81,7 @@ footer {
   .scrollbar-jitter-fix {
     margin-left: 0px;
   }
-}
 
-@media (max-width: 1100px) {
   footer p {
     margin: auto;
   }
@@ -104,5 +102,9 @@ footer {
 
   .no-match p {
     margin-bottom: auto;
+  }
+
+  .container {
+    min-height: auto;
   }
 }

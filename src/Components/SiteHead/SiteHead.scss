@@ -144,6 +144,11 @@ nav {
   header {
     display: grid;
     grid-template-columns: $logo-dimension auto 60px;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background: $color-background;
     margin-top: 10px;
     margin-bottom: 10px;
 
