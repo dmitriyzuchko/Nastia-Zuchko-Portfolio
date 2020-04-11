@@ -17,7 +17,7 @@ const ImageLoader = (props) => {
   className = `${className} ${loaded ? loadedClassName : loadingClassName}`;
   return (
     <div className={!loaded ? 'loading-wrapper' : ''}>
-      <LazyLoad offset={200} height={500} once>
+      <LazyLoad offset={400} height={500} once>
         <img
           src={props.src}
           alt={props.alt}
