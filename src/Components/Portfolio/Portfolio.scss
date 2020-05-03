@@ -1,11 +1,10 @@
 @import '../../variables.scss';
 
 #portfolio-display {
-  padding-top: 25px;
   text-align: center;
   justify-self: flex-start;
   display: grid;
-  gap: 50px;
+  row-gap: 30px;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 50px;
 }
@@ -32,14 +31,26 @@
 
 .piece-wrapper {
   position: relative;
-  margin: auto;
 }
 
 .portfolio-piece {
   position: relative;
   display: flex;
   align-items: baseline;
-  margin: 0 auto;
+
+  .center-align {
+    margin: auto;
+  }
+
+  .left-align {
+    margin-left: 0px;
+    margin-right: auto;
+  }
+
+  .right-align {
+    margin-right: 0px;
+    margin-left: auto;
+  }
 }
 
 .gallery-size-indicator {
@@ -71,8 +82,24 @@
     gap: 10px;
   }
 
+  .two-column .piece-wrapper {
+    width: auto;
+  }
+
   .one-column,
   .two-column {
     width: 95%;
+  }
+
+  .portfolio-piece {
+    margin: auto;
+
+    .left-align {
+      margin: auto;
+    }
+
+    .right-align {
+      margin: auto;
+    }
   }
 }

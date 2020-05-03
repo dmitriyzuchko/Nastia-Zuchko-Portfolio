@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import SiteHead from './SiteHead/SiteHead';
 import PortfolioDisplay from './Portfolio/PortfolioDisplay';
+import About from './About/About';
 import Contact from './Contact/Contact';
 import NoMatch from './NoMatch';
 import PieceDisplayPage from './PieceDisplayPage/PieceDisplayPage';
@@ -46,6 +47,7 @@ const PageDisplay = ({ location, history }) => {
           {(isNotPortfolioPiece || isModal) && <SiteHead />}
           <Switch location={isModal ? previousLocation : location}>
             <Route exact path='/' component={PortfolioDisplay} />
+            <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
             <Route path='/portfolio-piece/:name' component={PieceDisplayPage} />
             <Route path='/404' component={NoMatch} />
@@ -56,16 +58,14 @@ const PageDisplay = ({ location, history }) => {
       {isModal && (
         <Route
           path='/portfolio-piece/:name'
-          render={(routerProps) => (
-            <PieceDisplayPage isModal {...routerProps} />
-          )}
+          render={routerProps => <PieceDisplayPage isModal {...routerProps} />}
         />
       )}
     </ProfileContextWrap>
   );
 };
 
-const lockBodyScroll = (shouldLock) => {
+const lockBodyScroll = shouldLock => {
   if (shouldLock) {
     disableScroll();
   } else {

@@ -77,6 +77,10 @@ nav {
   }
 }
 
+.nav-display-button {
+  display: none;
+}
+
 @media (max-width: 600px) {
   header {
     height: auto;
@@ -131,5 +135,70 @@ nav {
 
   #social-network-links svg {
     margin: 0 20px;
+  }
+}
+
+@media (max-width: 1099px) {
+  $logo-dimension: 40px;
+
+  header {
+    display: grid;
+    grid-template-columns: $logo-dimension auto 60px;
+    position: sticky;
+    top: 10px;
+    left: 0px;
+    z-index: 1;
+    background: $color-background;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    h1 {
+      text-align: left;
+      margin-left: 20px;
+      margin-top: 4px;
+      margin-bottom: 0px;
+    }
+  }
+
+  #site-logo-wrapper {
+    display: block;
+    margin-left: 15px;
+
+    #site-logo {
+      height: $logo-dimension;
+      width: $logo-dimension;
+    }
+  }
+
+  #social-network-links,
+  header footer,
+  nav {
+    display: none;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #social-network-links {
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+
+  .nav-display-button {
+    display: block;
+    background: none;
+    border: none;
+    outline: none;
+    color: $color-accent;
+    font-size: 18pt;
+    align-self: center;
+  }
+
+  .responsive #social-network-links,
+  .responsive footer,
+  .responsive nav {
+    display: block;
+    grid-column: 1 / -1;
   }
 }
