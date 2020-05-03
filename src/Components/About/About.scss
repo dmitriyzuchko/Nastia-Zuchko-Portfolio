@@ -107,6 +107,11 @@ $section-width: 700px;
   }
 }
 
+.attributes p {
+  text-indent: 0px;
+  text-align: left;
+}
+
 @media (max-width: 1099px) {
   .about-me-wrapper {
     margin-top: 0px;
