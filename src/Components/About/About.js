@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Attribution from './Attribution';
+import CallToAction from './CallToAction';
 
 import Prismic from 'prismic-javascript';
 import { RichText } from 'prismic-reactjs';
@@ -34,6 +35,7 @@ const About = () => {
       filtered.process3Image = data.process3_image;
 
       filtered.bottomImage = data.bottom_image;
+      filtered.callToActionText = data.call_to_action_text;
 
       return filtered;
     };
@@ -77,9 +79,9 @@ const About = () => {
           {RichText.render(state.process3Text)}
         </div>
       </div>
-      <div className='bottom-image-wrapper'>
-        <img src={state.bottomImage.url} alt={state.bottomImage.alt} />
-      </div>
+      <CallToAction banner={state.bottomImage.url}>
+        {RichText.render(state.callToActionText)}
+      </CallToAction>
       <Attribution />
     </div>
   );
