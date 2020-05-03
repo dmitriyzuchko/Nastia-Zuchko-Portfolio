@@ -22,9 +22,10 @@ body {
 }
 
 .top-bar {
-  position: absolute;
+  position: sticky;
   top: 0px;
   left: 0px;
+  z-index: 2;
   height: $accent-bar-height;
   width: 100%;
   background: $color-accent;

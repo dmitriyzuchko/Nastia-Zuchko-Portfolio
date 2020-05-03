@@ -145,12 +145,13 @@ nav {
     display: grid;
     grid-template-columns: $logo-dimension auto 60px;
     position: sticky;
-    top: 0px;
+    top: 10px;
     left: 0px;
     z-index: 1;
     background: $color-background;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 
     h1 {
       text-align: left;
