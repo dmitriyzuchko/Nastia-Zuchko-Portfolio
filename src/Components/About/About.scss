@@ -74,7 +74,7 @@ $section-width: 700px;
   }
 
   .call-to-action-bubble {
-    background-color: $color-secondary;
+    background-color: $color-word-bubble;
     border-radius: 40px;
     padding: 30px;
 
@@ -96,7 +96,7 @@ $section-width: 700px;
   }
 
   .message_trail {
-    fill: $color-secondary;
+    fill: $color-word-bubble;
     height: 60px;
     width: auto;
     margin-left: 40%;
