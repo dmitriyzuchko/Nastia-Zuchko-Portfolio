@@ -25,6 +25,10 @@ $section-width: 700px;
   }
 }
 
+.profile-picture-container img {
+  width: 100%;
+}
+
 #about-me {
   font-size: 12pt;
   display: flex;
@@ -33,13 +37,6 @@ $section-width: 700px;
 
   h1 {
     text-align: left;
-  }
-
-  #personal-photo {
-    margin: auto;
-    margin-top: 56px;
-    margin-bottom: 25px;
-    width: 90%;
   }
 
   > p:nth-child(3) {
