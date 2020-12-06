@@ -3,41 +3,31 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ImageLoader from '../ImageLoader/ImageLoader';
 
-const PortfolioPiece = props => {
-  const link = `/portfolio-piece/${props.name}`;
-  const gallerySize = props.gallerySize;
-  let wrapperClasses = 'portfolio-piece ';
-
-  if (props.widthType === 'Half') {
-    wrapperClasses += 'two-column';
-  } else {
-    wrapperClasses += 'one-column';
-  }
+const PortfolioPiece = ({ name, category, src, style }) => {
+  const sanitizedName = encodeURI(name.replace(' ', '-'));
+  const sanitizedCategory = encodeURI(category.replace(' ', '-'));
+  const link = `/${sanitizedCategory}/${sanitizedName}`;
 
   return (
-    <Link
-      className={wrapperClasses}
-      to={{
-        pathname: link,
-        state: { modal: true }
-      }}
-    >
-      <div className={`piece-wrapper ${props.className}`}>
-        <ImageLoader src={props.src} alt={props.name} />
-        {gallerySize > 1 && (
-          <div className='gallery-size-indicator'>
-            <p>{`+${gallerySize}`}</p>
-          </div>
-        )}
-      </div>
-    </Link>
+    <div className='piece-wrapper' style={style}>
+      <Link
+        className='portfolio-piece'
+        to={{
+          pathname: link,
+          state: { modal: true },
+        }}
+      >
+        <ImageLoader src={src} alt={name} />
+      </Link>
+    </div>
   );
 };
 
 PortfolioPiece.propTypes = {
   src: PropTypes.string.isRequired,
-  widthType: PropTypes.string.isRequired,
-  gallerySize: PropTypes.number
+  category: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  style: PropTypes.object,
 };
 
 export default PortfolioPiece;
