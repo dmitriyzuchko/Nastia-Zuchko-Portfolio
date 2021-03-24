@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 
 import PortfolioPiece from './PortfolioPiece';
 import PortfolioContext from './../../context/PortfolioContext';
-import CategoryTabs from './CategoryTabs';
+import CategoryTabs from './CategoryTabs/CategoryTabs';
 
 import './Portfolio.scss';
 
