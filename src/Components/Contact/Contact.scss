@@ -3,11 +3,6 @@
 #contact-wrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 110px;
-
-  h1 {
-    font-weight: 200;
-  }
 
   > div {
     width: 500px;
@@ -50,7 +45,7 @@
     border: 0px;
     resize: none;
     line-height: normal;
-    padding: 0px;
+    padding: 10px;
   }
 
   .wrong_input {
@@ -70,7 +65,7 @@
       background: $color-accent;
       border-radius: 3px;
       border: #fff;
-      color: $color-secondary;
+      color: $color-background;
       padding: 5px 15px;
       text-align: center;
       overflow: hidden;
@@ -115,7 +110,7 @@
   a:visited,
   a:hover,
   a:active {
-    color: #fff;
+    color: $color-accent;
   }
 }
 

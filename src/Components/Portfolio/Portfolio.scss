@@ -1,28 +1,22 @@
 @import '../../variables.scss';
 
+#landing-image {
+  width: 100%;
+}
+
 #portfolio-display {
+  max-width: 1100px;
   text-align: center;
   justify-self: flex-start;
+  overflow: hidden;
+}
+
+.portfolio-pieces {
   display: grid;
-  row-gap: 30px;
-  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   margin-bottom: 50px;
-}
-
-.one-column {
-  grid-column: 1 / -1;
-  width: 100%;
-
-  img {
-    max-width: 100%;
-    max-height: 700px;
-  }
-}
-
-.two-column {
-  .piece-wrapper {
-    width: 95%;
-  }
 
   img {
     width: 100%;
@@ -31,6 +25,8 @@
 
 .piece-wrapper {
   position: relative;
+  justify-self: center;
+  align-self: center;
 }
 
 .portfolio-piece {
@@ -53,26 +49,15 @@
   }
 }
 
-.gallery-size-indicator {
-  $dimension: 30px;
-  $position: 10px;
-  position: absolute;
-  top: $position;
-  right: $position;
-  width: $dimension;
-  height: $dimension;
-  font-size: 17px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $color-secondary;
-  background: $color-accent;
+@media (min-width: 1300px) {
+  #portfolio-display {
+    width: 1100px;
+  }
 }
 
-@media (min-width: 900px) {
-  #portfolio-display .container {
-    width: 700px;
+@media (min-width: 1100px) {
+  #portfolio-display {
+    width: 900px;
   }
 }
 

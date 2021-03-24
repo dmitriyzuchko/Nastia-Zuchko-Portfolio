@@ -71,6 +71,11 @@ footer {
   }
 }
 
+@media (min-width: 1300px) {
+  .container {
+    width: 1300px;
+  }
+}
 @media (max-width: 1099px) {
   .container {
     display: flex;
