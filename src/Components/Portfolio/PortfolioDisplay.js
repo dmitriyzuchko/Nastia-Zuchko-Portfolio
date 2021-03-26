@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { isMobile } from '../../misc/DeviceCheck';
 
 import PortfolioPiece from './PortfolioPiece';
 import PortfolioContext from './../../context/PortfolioContext';
@@ -24,7 +25,10 @@ const PortfolioDisplay = () => {
       const index = Number(item);
       const start = (columns / images.length) * index + 1;
       const end = (columns / images.length) * (index + 1) + 1;
-      const style = { gridColumn: `${start} / ${end}` };
+
+      const marginRules = getMarginRules(start, end);
+
+      const style = { gridColumn: `${start} / ${end}`, ...marginRules };
 
       const piece = (
         <PortfolioPiece
@@ -57,9 +61,26 @@ const PortfolioDisplay = () => {
         onChange={changeActiveTab}
       />
       <div className='portfolio-pieces'>{pieces}</div>
-      {/* {portfolioComponents} */}
     </div>
   );
+};
+
+const getMarginRules = (start, end) => {
+  if (isMobile()) return {};
+
+  if (start === 1 && end === 4) {
+    return { marginRight: '10px' };
+  } else if (start === 4 && end === 7) {
+    return { marginLeft: '10px' };
+  } else if (start === 3) {
+    return { margin: '0 10px' };
+  } else if (start === 1 && end === 3) {
+    return { marginRight: '10px' };
+  } else if (start === 5) {
+    return { marginLeft: '10px' };
+  }
+
+  return {};
 };
 
 export default PortfolioDisplay;
