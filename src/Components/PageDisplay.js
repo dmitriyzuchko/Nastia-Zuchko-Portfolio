@@ -49,18 +49,15 @@ const PageDisplay = ({ location, history }) => {
             <Route exact path='/' component={PortfolioDisplay} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
-            <Route path='/portfolio-piece/:name' component={PieceDisplayPage} />
             <Route path='/404' component={NoMatch} />
-            <Route component={NoMatch} />
+            <Route component={PortfolioDisplay} />
           </Switch>
         </div>
       </div>
-      {isModal && (
-        <Route
-          path='/portfolio-piece/:name'
-          render={routerProps => <PieceDisplayPage isModal {...routerProps} />}
-        />
-      )}
+      <Route
+        path='/:category/:name'
+        render={routerProps => <PieceDisplayPage isModal {...routerProps} />}
+      />
     </ProfileContextWrap>
   );
 };

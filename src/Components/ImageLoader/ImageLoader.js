@@ -4,7 +4,7 @@ import './ImageLoader.scss';
 
 const _loaded = {};
 
-const ImageLoader = (props) => {
+const ImageLoader = props => {
   const [loaded, setLoaded] = useState(_loaded[props.src]);
 
   const onLoad = () => {

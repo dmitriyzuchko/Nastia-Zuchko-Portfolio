@@ -22,18 +22,6 @@ const About = () => {
       filtered.profilePicture = data.profile_picture;
       filtered.aboutText = data.about_text;
 
-      filtered.process1Title = data.process1_title;
-      filtered.process1Text = data.process1_text;
-      filtered.process1Image = data.process1_image;
-
-      filtered.process2Title = data.process2_title;
-      filtered.process2Text = data.process2_text;
-      filtered.process2Image = data.process2_image;
-
-      filtered.process3Title = data.process3_title;
-      filtered.process3Text = data.process3_text;
-      filtered.process3Image = data.process3_image;
-
       filtered.bottomImage = data.bottom_image;
       filtered.callToActionText = data.call_to_action_text;
 
@@ -61,23 +49,6 @@ const About = () => {
       <div id='about-me'>
         <h1>ABOUT ME</h1>
         {RichText.render(state.aboutText)}
-      </div>
-      <div className='processes'>
-        <div className='process'>
-          <img src={state.process1Image.url} alt={state.process1Image.alt} />
-          {RichText.render(state.process1Title)}
-          {RichText.render(state.process1Text)}
-        </div>
-        <div className='process'>
-          <img src={state.process2Image.url} alt={state.process2Image.alt} />
-          {RichText.render(state.process2Title)}
-          {RichText.render(state.process2Text)}
-        </div>
-        <div className='process'>
-          <img src={state.process3Image.url} alt={state.process3Image.alt} />
-          {RichText.render(state.process3Title)}
-          {RichText.render(state.process3Text)}
-        </div>
       </div>
       <CallToAction banner={state.bottomImage.url}>
         {RichText.render(state.callToActionText)}
